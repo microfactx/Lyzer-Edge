@@ -10,6 +10,33 @@ import './styles/base.css';
 import '@lyzer/shared/styles/components.css';
 import '@lyzer/shared/styles/layout.css';
 
+// Auto-detect and persist admin API key from query params or localStorage
+try {
+  const urlParams = new URLSearchParams(window.location.search);
+  const keyFromUrl = urlParams.get('key') || urlParams.get('adminKey') || urlParams.get('token');
+  if (keyFromUrl) {
+    localStorage.setItem('lyzer_admin_key', keyFromUrl);
+  }
+  const storedKey = localStorage.getItem('lyzer_admin_key');
+  if (storedKey) {
+    const originalFetch = window.fetch;
+    window.fetch = function (resource, init) {
+      init = init || {};
+      init.headers = init.headers || {};
+      if (init.headers instanceof Headers) {
+        if (!init.headers.has('x-admin-key')) init.headers.set('x-admin-key', storedKey);
+      } else if (Array.isArray(init.headers)) {
+        if (!init.headers.some(([k]) => k.toLowerCase() === 'x-admin-key')) {
+          init.headers.push(['x-admin-key', storedKey]);
+        }
+      } else {
+        if (!init.headers['x-admin-key']) init.headers['x-admin-key'] = storedKey;
+      }
+      return originalFetch.call(this, resource, init);
+    };
+  }
+} catch (_) {}
+
 async function main() {
   try {
     await initDatabase();

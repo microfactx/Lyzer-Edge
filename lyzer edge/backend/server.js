@@ -835,7 +835,8 @@ wss.on('connection', (ws, req) => {
   if (adminKey) {
     // Basic auth check via query param for WS
     const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-    if (url.searchParams.get('key') !== adminKey) {
+    const clientKey = url.searchParams.get('key') || url.searchParams.get('adminKey') || url.searchParams.get('token') || req.headers['x-admin-key'];
+    if (clientKey !== adminKey) {
       console.log('🔴 Rejected unauthenticated WS connection');
       ws.close(1008, 'Unauthorized');
       return;

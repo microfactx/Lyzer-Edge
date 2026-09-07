@@ -47,6 +47,21 @@ class WSClient {
     if (window.location.port === '5173') {
       wsUrl = protocol + '//' + window.location.hostname + ':7860';
     }
+
+    try {
+      const searchParams = new URLSearchParams(window.location.search);
+      let key = searchParams.get('key') || searchParams.get('adminKey') || searchParams.get('token');
+      if (key) {
+        localStorage.setItem('lyzer_admin_key', key);
+      } else {
+        key = localStorage.getItem('lyzer_admin_key');
+      }
+      if (key) {
+        const sep = wsUrl.includes('?') ? '&' : '?';
+        wsUrl += `${sep}key=${encodeURIComponent(key)}`;
+      }
+    } catch (_) {}
+
     console.log(`[wsClient] Connecting to WebSocket at ${wsUrl}...`);
     this.ws = new WebSocket(wsUrl);
 
