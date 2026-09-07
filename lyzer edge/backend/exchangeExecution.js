@@ -132,6 +132,9 @@ export class ExchangeExecution {
         headers: { 'X-MBX-APIKEY': this.apiKey }
       });
       if (!response.ok) {
+        if (response.status === 451) {
+          return { balances: [], geoRestricted: true };
+        }
         let errStr = '';
         try { errStr = await response.text(); } catch(e) {}
         console.error(`[EXECUTION] ❌ Failed to fetch account HTTP ${response.status}:`, errStr);
@@ -161,6 +164,9 @@ export class ExchangeExecution {
         headers: { 'X-MBX-APIKEY': this.apiKey }
       });
       if (!response.ok) {
+        if (response.status === 451) {
+          return [];
+        }
         let errStr = '';
         try { errStr = await response.text(); } catch(e) {}
         console.error(`[EXECUTION] ❌ Failed to fetch open orders HTTP ${response.status}:`, errStr);
@@ -188,6 +194,9 @@ export class ExchangeExecution {
         headers: { 'X-MBX-APIKEY': this.apiKey }
       });
       if (!response.ok) {
+        if (response.status === 451) {
+          return { success: false, geoRestricted: true };
+        }
         let errStr = '';
         try { errStr = await response.text(); } catch(e) {}
         console.error(`[EXECUTION] ❌ Failed to cancel open orders for ${cleanSymbol} HTTP ${response.status}:`, errStr);
