@@ -1,10 +1,10 @@
 # 🏛️ LYZER EDGE — RESEARCH & OPERATIONAL STATE DASHBOARD
 
-**Data do Registro:** 2026-09-06T23:59:59Z  
+**Data do Registro:** 2026-09-07T08:45:00Z  
 **Autoridade:** Senior CTO & Executive Engineering Director  
-**Status do Repositório:** 🟢 **FIRST PRODUCTION ALPHA HOMOLOGATED (H017 CONFIRMATORY PASS)**  
-**Dataset Base:** 32.016 Hourly Candles BTCUSDT + Painel Multiativo Sincronizado (BTC, ETH, SOL, AVAX, LINK, DOGE)  
-**Git Remote:** `https://github.com/Ciamarro1/Lyzer-Edge.git` (`origin/main` @ commit `40f360c`)  
+**Status do Repositório:** 🟢 **FIRST PRODUCTION ALPHA HOMOLOGATED (H017 SOAK) + TRADFI PASSIVE CARRIED**  
+**Dataset Base:** 32.016 Hourly Candles BTCUSDT + Painel Multiativo Sincronizado Crypto & TradFi (SPY, QQQ, GLD, EUR, GBP, JPY, CHF, AUD, CAD, MXN, BRL, ZAR, PLN)  
+**Git Remote:** `https://github.com/microfactx/Lyzer-Edge.git` (`origin/main` @ commit `5c2514d`)  
 **Motor V8 SHA-256:** `fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1` (**100% INTACTO**)  
 
 ---
@@ -142,6 +142,12 @@ AD013              High-Frequency TradFi Cross-Asset      0/28 células elegíve
 AD014              Algorithmic Passive Income & Regime-   Breakthrough em USDJPY: +10.86% a.a.     🟡 CANDIDATO ISOLADO
                     Protected Macro Carry (2023–2024)      líquido (p=0.0001, q_BY=0.0008, DD 4.7%) (AD014_REPORT.md)
                                                            com escape para T-Bills (5%) no Yen Unwind.
+AD015              Diversified Multi-Currency Carry       4-JPY Carry Basket (USD/GBP/AUD/CAD):    🟢 CAMPEÃO TRADFI
+                    Basket Engine (2023–2024)              +9.07% a.a. líquido, MaxDD 2.96%         (AD015_REPORT.md)
+                                                           (p=0.0001, q_BY=0.0005). Campeão Passivo.
+AD016              Dual-Funding G10 & High-Yield          Dual-Funding G10 isolou MaxDD 2.08%      🟡 DUAL G10 ISOLADO
+                    Emerging Market Carry (2023–2024)      com Sharpe 1.61 (+6.96% a.a.);           (AD016_REPORT.md)
+                                                           Emergentes (MXN/BRL) FALSIFICADOS (-8%).
 ========================================================================================================================
 ```
 
@@ -233,6 +239,12 @@ A hipótese **`H017` (Productive Collateral Basis Carry)** quebrou formalmente t
 8. [ ] **Monitoramento Wall-Clock (7 Dias de Calendário)**:
    - Coleta de 21 ciclos de funding e 7 checkpoints diários em tempo cronológico real;
    - Auditoria final para liberação da Fase 2 (Canary de $500 USD).
+9. [x] **Programa de Descoberta AD013**: Avaliação de 28 células de regime TradFi (Forex E<0, Equities N<60);
+10. [x] **Programa de Descoberta AD014**: Renda Passiva Macro Carry USDJPY (+10.86% a.a. líquido, MaxDD 4.74%, p=0.0001);
+11. [x] **Programa de Descoberta AD015**: Cesta Multi-Moeda Carry 4-JPY (+9.07% a.a. líquido, MaxDD 2.96%, p=0.0001, q_BY=0.0005) — Campeão TradFi;
+12. [x] **Programa de Descoberta AD016**: Dual-Funding G10 (JPY+CHF, MaxDD 2.08%, Sharpe 1.61) e Falsificação de Emergentes (-8% a.a., DD 10.37%);
+13. [ ] **Elaboração de Carta Confirmatória H019**: Validação estatística do modelo AD015 Basket Carry no Holdout 2025–2026;
+14. [ ] **Programa de Descoberta AD017**: Renda Fixa e Curva de Juros dos EUA (Treasury duration carry).
 
 ---
 
@@ -251,6 +263,11 @@ A hipótese **`H017` (Productive Collateral Basis Carry)** quebrou formalmente t
 - **Resultados Detalhados H017 (JSON):** [`research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_RESULTS.json`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_RESULTS.json)
 - **Carta Constitucional de H017:** [`research/alpha_confirmation/H017_PRODUCTIVE_CARRY/charter/H017_CONFIRMATORY_CHARTER.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_confirmation/H017_PRODUCTIVE_CARRY/charter/H017_CONFIRMATORY_CHARTER.md)
 - **Relatório de Descoberta AD010:** [`research/alpha_discovery/AD010/discovery/AD010_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_discovery/AD010/discovery/AD010_DISCOVERY_REPORT.md)
+- **Relatório de Descoberta AD014:** [`research/alpha_discovery/AD014/discovery/AD014_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_discovery/AD014/discovery/AD014_DISCOVERY_REPORT.md)
+- **Relatório de Descoberta AD015 (Campeão TradFi):** [`research/alpha_discovery/AD015/discovery/AD015_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_discovery/AD015/discovery/AD015_DISCOVERY_REPORT.md)
+- **Relatório de Descoberta AD016 (Dual-Funding G10):** [`research/alpha_discovery/AD016/discovery/AD016_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_discovery/AD016/discovery/AD016_DISCOVERY_REPORT.md)
+- **Handoff Report Consolidado:** [`.agents/handoff.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/.agents/handoff.md)
+- **Memória Persistente de Renda Passiva TradFi:** [`.agents/memory/alpha-research-tradfi-passive-income.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/.agents/memory/alpha-research-tradfi-passive-income.md)
 - **Master Hypothesis Ledger (MD):** [`research/HYPOTHESIS_LEDGER.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/HYPOTHESIS_LEDGER.md)
 - **Master Hypothesis Ledger (JSON):** [`research/HYPOTHESIS_LEDGER.json`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/HYPOTHESIS_LEDGER.json)
 - **Constituição da Engenharia:** [`.agents/rules/MASTER_PROMPT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/.agents/rules/MASTER_PROMPT.md)
