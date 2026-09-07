@@ -1,0 +1,64 @@
+{
+  "hypothesisId": "H016",
+  "name": "Cross-Asset Friction-Buffered Basis Carry in Top-2 Core Cryptos (2.0x, Delta=0)",
+  "timestampUTC": "2026-09-06T23:19:28.342Z",
+  "verdict": "CONFIRMATORY_FAIL",
+  "allGatesPassed": false,
+  "gates": {
+    "gate1_annualizedReturn": {
+      "required": ">= +6.00% a.a.",
+      "observed": "+2.62% a.a.",
+      "pass": false
+    },
+    "gate2_totalReturn": {
+      "required": "> 0.00%",
+      "observed": "+4.41%",
+      "pass": true
+    },
+    "gate3_sharpeRatio": {
+      "required": ">= 5.00",
+      "observed": "15.86",
+      "pass": true
+    },
+    "gate4_maxDrawdown": {
+      "required": "<= 3.00%",
+      "observed": "0.85%",
+      "pass": true
+    },
+    "gate5_statisticalSignificance": {
+      "required": "p_block < 0.0500",
+      "observed": "0.0001",
+      "pass": true
+    }
+  },
+  "metrics": {
+    "hypothesisId": "H016",
+    "evalPeriods": 1824,
+    "annualizedReturnPct": 2.62,
+    "totalNetReturnPct": 4.41,
+    "annualizedSharpe": 15.86,
+    "maxDrawdownPct": 0.85,
+    "percentActive": 90.1,
+    "turnoverEvents": 24,
+    "turnoverVolume": 13.63,
+    "turnoverFeePct": 2.28,
+    "nBlocks": 44,
+    "meanNetRPerBlock": null,
+    "ci95Lower": null,
+    "ci95Upper": null,
+    "pBlock": 0.0001,
+    "profitFactor": null
+  },
+  "bootstrap": {
+    "nTrades": 44,
+    "meanNetR": null,
+    "ci95Lower": null,
+    "ci95Upper": null,
+    "pBlock": 0.0001,
+    "profitFactor": null,
+    "mddR": 0,
+    "totalNetR": null,
+    "isDegenerate": false,
+    "degeneracyReason": null
+  }
+}

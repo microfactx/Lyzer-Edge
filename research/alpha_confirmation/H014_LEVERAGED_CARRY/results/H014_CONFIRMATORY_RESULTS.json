@@ -1,0 +1,63 @@
+{
+  "hypothesisId": "H014",
+  "name": "Conservative Leveraged Delta-Neutral Basis Carry in BTC/ETH (2.0x)",
+  "timestampUTC": "2026-09-06T22:38:11.580Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "holdoutWindow": {
+    "startDateUTC": "2025-01-01T00:00:00.000Z",
+    "endDateUTC": "2026-08-31T23:59:59.999Z",
+    "total8hPeriods": 1824
+  },
+  "metrics": {
+    "totalNetReturnPct": 6.12,
+    "annualizedReturnPct": 3.63,
+    "annualizedSharpe": 10.73,
+    "maxDrawdownPct": 2.04,
+    "pBlock": 0.0001,
+    "qBY": 0.0001,
+    "profitFactor": 3.63,
+    "meanNetRPerBlock": 0.135,
+    "ci95Lower": 0.062,
+    "ci95Upper": 0.204,
+    "legs": {
+      "BTCUSDT": {
+        "totalReturnPct": 6.82,
+        "annualizedReturnPct": 4.04,
+        "positive": true
+      },
+      "ETHUSDT": {
+        "totalReturnPct": 4.92,
+        "annualizedReturnPct": 2.92,
+        "positive": true
+      }
+    }
+  },
+  "gates": {
+    "gate1_annualizedReturn": {
+      "threshold": ">= +10.0%",
+      "observed": "+3.63%",
+      "pass": false
+    },
+    "gate2_sharpeRatio": {
+      "threshold": ">= 5.0",
+      "observed": "10.73",
+      "pass": true
+    },
+    "gate3_maxDrawdown": {
+      "threshold": "<= 3.0%",
+      "observed": "2.04%",
+      "pass": true
+    },
+    "gate4_statisticalSignificance": {
+      "threshold": "< 0.0500",
+      "observed": "0.0001",
+      "pass": true
+    },
+    "gate5_crossLegBreadth": {
+      "threshold": "BTC & ETH > 0",
+      "observed": "BTC=+6.82%, ETH=+4.92%",
+      "pass": true
+    }
+  },
+  "finalVerdict": "CONFIRMATORY_FAIL"
+}

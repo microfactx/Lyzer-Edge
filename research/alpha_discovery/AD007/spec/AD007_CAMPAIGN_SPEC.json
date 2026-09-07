@@ -1,0 +1,144 @@
+{
+  "campaignId": "AD007_LEVERAGED_BASIS_CARRY_DISCOVERY",
+  "program": "AD007",
+  "title": "Dynamic Leveraged Basis Carry & Multi-Asset Yield Optimizer",
+  "family": "LEVERAGED_DELTA_NEUTRAL_CARRY_ARBITRAGE",
+  "targetAssets": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "AVAXUSDT",
+    "LINKUSDT",
+    "DOGEUSDT"
+  ],
+  "timeframe": "8h",
+  "period": {
+    "startMs": 1672531200000,
+    "endMs": 1735689599999,
+    "label": "2023-01-01 to 2024-12-31 (Strict 2-Year Discovery)"
+  },
+  "friction": {
+    "spotFeeBps": 5,
+    "perpFeeBps": 5,
+    "slippageBps": 2,
+    "totalRoundtripBpsPerCycle": 24
+  },
+  "borrowing": {
+    "annualBorrowRatePct": 4.0,
+    "description": "Continuous annual USD borrowing interest rate applied on borrowed margin (L - 1.0)"
+  },
+  "riskUnit": {
+    "unitRiskPct": 0.01,
+    "label": "1R is normalized to 1.0% (100 bps) net unleveraged yield"
+  },
+  "cells": [
+    {
+      "id": "AD007_STATIC_BTC_ETH_1X",
+      "type": "STATIC_BENCHMARK",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 1.0,
+      "rebalanceDays": 0,
+      "lookbackDays": 0,
+      "description": "Control Benchmark: Static 50/50 BTC/ETH delta-neutral carry at 1.0x unleveraged"
+    },
+    {
+      "id": "AD007_STATIC_BTC_ETH_1.5X",
+      "type": "STATIC_BENCHMARK",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 1.5,
+      "rebalanceDays": 0,
+      "lookbackDays": 0,
+      "description": "Static 50/50 BTC/ETH carry at 1.5x leverage with 4.0% p.a. borrowing cost on 0.5x"
+    },
+    {
+      "id": "AD007_STATIC_BTC_ETH_2X",
+      "type": "STATIC_BENCHMARK",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.0,
+      "rebalanceDays": 0,
+      "lookbackDays": 0,
+      "description": "Static 50/50 BTC/ETH carry at 2.0x leverage with 4.0% p.a. borrowing cost on 1.0x"
+    },
+    {
+      "id": "AD007_STATIC_BTC_ETH_2.5X",
+      "type": "STATIC_BENCHMARK",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.5,
+      "rebalanceDays": 0,
+      "lookbackDays": 0,
+      "description": "Static 50/50 BTC/ETH carry at 2.5x leverage with 4.0% p.a. borrowing cost on 1.5x"
+    },
+    {
+      "id": "AD007_STATIC_ALL6_2X",
+      "type": "STATIC_BENCHMARK",
+      "allocation": "ALL_6_EQUAL_WEIGHT",
+      "leverage": 2.0,
+      "rebalanceDays": 0,
+      "lookbackDays": 0,
+      "description": "Static 1/6 Equal Weight across all 6 assets at 2.0x leverage"
+    },
+    {
+      "id": "AD007_ROTATION_TOP2_M1_1X",
+      "type": "DYNAMIC_ROTATION",
+      "allocation": "TOP_2_YIELDERS",
+      "leverage": 1.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "description": "Dynamic Monthly Rotation into Top 2 yielding assets at 1.0x unleveraged"
+    },
+    {
+      "id": "AD007_ROTATION_TOP2_M1_1.5X",
+      "type": "DYNAMIC_ROTATION",
+      "allocation": "TOP_2_YIELDERS",
+      "leverage": 1.5,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "description": "Dynamic Monthly Rotation into Top 2 yielding assets at 1.5x leverage"
+    },
+    {
+      "id": "AD007_ROTATION_TOP2_M1_2X",
+      "type": "DYNAMIC_ROTATION",
+      "allocation": "TOP_2_YIELDERS",
+      "leverage": 2.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "description": "Dynamic Monthly Rotation into Top 2 yielding assets at 2.0x leverage"
+    },
+    {
+      "id": "AD007_ROTATION_TOP2_M1_2.5X",
+      "type": "DYNAMIC_ROTATION",
+      "allocation": "TOP_2_YIELDERS",
+      "leverage": 2.5,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "description": "Dynamic Monthly Rotation into Top 2 yielding assets at 2.5x leverage"
+    },
+    {
+      "id": "AD007_ROTATION_TOP3_M1_1.5X",
+      "type": "DYNAMIC_ROTATION",
+      "allocation": "TOP_3_YIELDERS",
+      "leverage": 1.5,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "description": "Dynamic Monthly Rotation into Top 3 yielding assets (1/3 each) at 1.5x leverage"
+    },
+    {
+      "id": "AD007_ROTATION_TOP3_M1_2X",
+      "type": "DYNAMIC_ROTATION",
+      "allocation": "TOP_3_YIELDERS",
+      "leverage": 2.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "description": "Dynamic Monthly Rotation into Top 3 yielding assets (1/3 each) at 2.0x leverage"
+    },
+    {
+      "id": "AD007_VOL_ADJ_TOP2_M1_2X",
+      "type": "VOLATILITY_ADJUSTED_ROTATION",
+      "allocation": "TOP_2_YIELD_TO_VOL",
+      "leverage": 2.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "description": "Dynamic Monthly Rotation into Top 2 assets ranked by Funding-to-Volatility ratio at 2.0x leverage"
+    }
+  ]
+}

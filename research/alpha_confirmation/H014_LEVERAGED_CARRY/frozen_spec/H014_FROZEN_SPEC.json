@@ -1,0 +1,68 @@
+{
+  "hypothesisId": "H014",
+  "name": "Conservative Leveraged Delta-Neutral Basis Carry in BTC/ETH (2.0x)",
+  "programOrigin": "AD007",
+  "cellOrigin": "AD007_STATIC_BTC_ETH_2X",
+  "status": "FROZEN_AWAITING_UNLOCK",
+  "dateFrozenUTC": "2026-09-06T22:45:00.000Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "holdoutPopulation": {
+    "type": "TEMPORAL_HOLDOUT_VIRGIN",
+    "startDateUTC": "2025-01-01T00:00:00.000Z",
+    "endDateUTC": "2026-08-31T23:59:59.999Z",
+    "startMs": 1735689600000,
+    "endMs": 1788220799999,
+    "targetAssets": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "timeframe": "8h"
+  },
+  "parameters": {
+    "strategyType": "STATIC_BENCHMARK",
+    "allocation": "BTC_ETH_50_50",
+    "weights": {
+      "BTCUSDT": 0.5,
+      "ETHUSDT": 0.5
+    },
+    "leverage": 2.0,
+    "borrowing": {
+      "annualBorrowRatePct": 4.0,
+      "borrowedMargin": 1.0
+    },
+    "delta": 0.0,
+    "rebalanceDays": 0,
+    "lookbackDays": 0
+  },
+  "friction": {
+    "totalRoundtripBpsPerCycle": 24,
+    "effectiveFrictionBps": 48,
+    "spotFeeBps": 12,
+    "perpFeeBps": 12
+  },
+  "confirmatoryGates": {
+    "gate1_annualizedReturn": {
+      "metric": "annualizedReturnPct",
+      "threshold": ">= 10.0"
+    },
+    "gate2_sharpeRatio": {
+      "metric": "annualizedSharpe",
+      "threshold": ">= 5.0"
+    },
+    "gate3_maxDrawdown": {
+      "metric": "maxDrawdownPct",
+      "threshold": "<= 3.0"
+    },
+    "gate4_statisticalSignificance": {
+      "metric": "p_block",
+      "threshold": "< 0.0500",
+      "bootstrapReplications": 10000,
+      "calendarBlockDays": 14,
+      "hypothesisCountM": 1
+    },
+    "gate5_crossLegBreadth": {
+      "metric": "allLegsPositive",
+      "threshold": "BTCUSDT > 0 and ETHUSDT > 0"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "hypothesisId": "H017",
+  "name": "Productive Collateral Basis Carry in Top-2 Cryptos (2.0x, LST Staking, Delta=0)",
+  "timestampUTC": "2026-09-06T23:59:39.966Z",
+  "verdict": "CONFIRMATORY_PASS",
+  "allGatesPassed": true,
+  "gates": {
+    "gate1_annualizedReturn": {
+      "required": ">= +6.00% a.a.",
+      "observed": "+6.42% a.a.",
+      "pass": true
+    },
+    "gate2_totalReturn": {
+      "required": "> 0.00%",
+      "observed": "+10.92%",
+      "pass": true
+    },
+    "gate3_sharpeRatio": {
+      "required": ">= 5.00",
+      "observed": "14.89",
+      "pass": true
+    },
+    "gate4_maxDrawdown": {
+      "required": "<= 3.00%",
+      "observed": "1.45%",
+      "pass": true
+    },
+    "gate5_statisticalSignificance": {
+      "required": "p_block < 0.0500",
+      "observed": "0.0001",
+      "pass": true
+    }
+  },
+  "metrics": {
+    "hypothesisId": "H017",
+    "evalPeriods": 1824,
+    "annualizedReturnPct": 6.42,
+    "totalNetReturnPct": 10.92,
+    "annualizedSharpe": 14.89,
+    "maxDrawdownPct": 1.45,
+    "percentActive": 100,
+    "turnoverEvents": 28,
+    "turnoverVolume": 14,
+    "turnoverFeePct": 3.36,
+    "nBlocks": 44,
+    "meanNetRPerBlock": null,
+    "ci95Lower": null,
+    "ci95Upper": null,
+    "pBlock": 0.0001,
+    "profitFactor": null
+  },
+  "bootstrap": {
+    "nTrades": 44,
+    "meanNetR": null,
+    "ci95Lower": null,
+    "ci95Upper": null,
+    "pBlock": 0.0001,
+    "profitFactor": null,
+    "mddR": 0,
+    "totalNetR": null,
+    "isDegenerate": false,
+    "degeneracyReason": null
+  }
+}

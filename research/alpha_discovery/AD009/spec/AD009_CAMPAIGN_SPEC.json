@@ -1,0 +1,190 @@
+{
+  "campaignId": "AD009_CROSS_ASSET_SPREAD_CARRY",
+  "program": "AD009",
+  "title": "Cross-Asset Basis Spread & Friction-Buffered Carry Engine",
+  "family": "CROSS_ASSET_SPREAD_BUFFERED_CARRY_ARBITRAGE",
+  "targetAssets": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "AVAXUSDT",
+    "LINKUSDT",
+    "DOGEUSDT"
+  ],
+  "timeframe": "8h",
+  "period": {
+    "startMs": 1672531200000,
+    "endMs": 1735689599999,
+    "label": "2023-01-01 to 2024-12-31 (Strict 2-Year Discovery)"
+  },
+  "friction": {
+    "spotFeeBps": 5,
+    "perpFeeBps": 5,
+    "slippageBps": 2,
+    "totalRoundtripBpsPerCycle": 24
+  },
+  "borrowing": {
+    "annualBorrowRatePct": 4.0,
+    "description": "Continuous annual USD borrowing rate applied strictly during active carry allocation on (L - 1.0)"
+  },
+  "cashRate": {
+    "annualCashRatePct": 0.0,
+    "description": "Conservative baseline cash return when unallocated (in cash)."
+  },
+  "cells": [
+    {
+      "id": "AD009_CTRL_STATIC_1X",
+      "type": "STATIC_CONTROL",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 1.0,
+      "maxLeverage": 1.0,
+      "lookbackDays": 0,
+      "rebalanceDays": 0,
+      "bufferPct": 0.0,
+      "hurdlePct": 0.0,
+      "description": "Passive Benchmark: Static 50/50 BTC/ETH delta-neutral carry at 1.0x unleveraged (unconditional)"
+    },
+    {
+      "id": "AD009_CTRL_STATIC_2X",
+      "type": "STATIC_CONTROL",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.0,
+      "maxLeverage": 2.0,
+      "lookbackDays": 0,
+      "rebalanceDays": 0,
+      "bufferPct": 0.0,
+      "hurdlePct": 0.0,
+      "description": "Passive Leveraged Benchmark: Static 50/50 BTC/ETH delta-neutral carry at 2.0x leverage with continuous 4.0% borrowing"
+    },
+    {
+      "id": "AD009_CTRL_GATED_H015",
+      "type": "GATED_CONTROL",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.0,
+      "maxLeverage": 2.0,
+      "lookbackDays": 7,
+      "rebalanceDays": 0.333,
+      "bufferPct": 0.0,
+      "hurdlePct": 6.0,
+      "exitHurdlePct": 4.0,
+      "description": "H015 Baseline: Gated 50/50 BTC/ETH at 2.0x with 7d lookback, [4.0%, 6.0%] hysteresis, no buffer"
+    },
+    {
+      "id": "AD009_BUFFERED_TOP2_M30_L20_B20",
+      "type": "BUFFERED_DYNAMIC",
+      "allocation": "TOP_K_SPREAD",
+      "topK": 2,
+      "leverage": "DYNAMIC_SPREAD",
+      "maxLeverage": 2.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "bufferPct": 2.0,
+      "hurdlePct": 3.0,
+      "description": "Core Candidate 1: Top 2 Assets, 30d lookback, monthly rebalance, 2.0% rank buffer, dynamic leverage up to 2.0x"
+    },
+    {
+      "id": "AD009_BUFFERED_TOP2_M60_L20_B20",
+      "type": "BUFFERED_DYNAMIC",
+      "allocation": "TOP_K_SPREAD",
+      "topK": 2,
+      "leverage": "DYNAMIC_SPREAD",
+      "maxLeverage": 2.0,
+      "lookbackDays": 60,
+      "rebalanceDays": 30,
+      "bufferPct": 2.0,
+      "hurdlePct": 3.0,
+      "description": "Ultra-Low Turnover: Top 2 Assets, 60d lookback, monthly rebalance, 2.0% rank buffer, dynamic leverage up to 2.0x"
+    },
+    {
+      "id": "AD009_BUFFERED_TOP3_M30_L20_B20",
+      "type": "BUFFERED_DYNAMIC",
+      "allocation": "TOP_K_SPREAD",
+      "topK": 3,
+      "leverage": "DYNAMIC_SPREAD",
+      "maxLeverage": 2.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "bufferPct": 2.0,
+      "hurdlePct": 3.0,
+      "description": "Diversified Top 3: Top 3 Assets, 30d lookback, monthly rebalance, 2.0% rank buffer, dynamic leverage up to 2.0x"
+    },
+    {
+      "id": "AD009_BUFFERED_TOP3_M60_L20_B20",
+      "type": "BUFFERED_DYNAMIC",
+      "allocation": "TOP_K_SPREAD",
+      "topK": 3,
+      "leverage": "DYNAMIC_SPREAD",
+      "maxLeverage": 2.0,
+      "lookbackDays": 60,
+      "rebalanceDays": 30,
+      "bufferPct": 2.0,
+      "hurdlePct": 3.0,
+      "description": "Diversified Top 3 Smooth: Top 3 Assets, 60d lookback, monthly rebalance, 2.0% rank buffer, dynamic leverage up to 2.0x"
+    },
+    {
+      "id": "AD009_BUFFERED_TOP2_W14_L20_B20",
+      "type": "BUFFERED_DYNAMIC",
+      "allocation": "TOP_K_SPREAD",
+      "topK": 2,
+      "leverage": "DYNAMIC_SPREAD",
+      "maxLeverage": 2.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 14,
+      "bufferPct": 2.0,
+      "hurdlePct": 3.0,
+      "description": "Bi-weekly Schedule: Top 2 Assets, 30d lookback, 14d rebalance, 2.0% rank buffer, dynamic leverage up to 2.0x"
+    },
+    {
+      "id": "AD009_BUFFERED_TOP2_M30_L15_B20",
+      "type": "BUFFERED_DYNAMIC",
+      "allocation": "TOP_K_SPREAD",
+      "topK": 2,
+      "leverage": "DYNAMIC_SPREAD",
+      "maxLeverage": 1.5,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "bufferPct": 2.0,
+      "hurdlePct": 3.0,
+      "description": "Conservative 1.5x: Top 2 Assets, 30d lookback, monthly rebalance, 2.0% rank buffer, dynamic leverage up to 1.5x"
+    },
+    {
+      "id": "AD009_BUFFERED_TOP2_M30_L20_B30",
+      "type": "BUFFERED_DYNAMIC",
+      "allocation": "TOP_K_SPREAD",
+      "topK": 2,
+      "leverage": "DYNAMIC_SPREAD",
+      "maxLeverage": 2.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "bufferPct": 3.0,
+      "hurdlePct": 3.0,
+      "description": "High Inertia Buffer (300 bps): Top 2 Assets, 30d lookback, monthly rebalance, 3.0% rank buffer, dynamic leverage up to 2.0x"
+    },
+    {
+      "id": "AD009_ABLATION_TOP2_NO_BUFFER",
+      "type": "BUFFERED_DYNAMIC",
+      "allocation": "TOP_K_SPREAD",
+      "topK": 2,
+      "leverage": "DYNAMIC_SPREAD",
+      "maxLeverage": 2.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "bufferPct": 0.0,
+      "hurdlePct": 3.0,
+      "description": "Ablation Control (Zero Buffer): Top 2 Assets, 30d lookback, monthly rebalance, 0.0% buffer (Measures fee drag of buffer absence)"
+    },
+    {
+      "id": "AD009_ABLATION_CROSS_PERP_UNHEDGED",
+      "type": "CROSS_PERP_UNHEDGED",
+      "allocation": "LONG_LOW_SHORT_HIGH_PERP",
+      "topK": 1,
+      "leverage": 1.0,
+      "maxLeverage": 1.0,
+      "lookbackDays": 30,
+      "rebalanceDays": 30,
+      "bufferPct": 0.0,
+      "hurdlePct": 0.0,
+      "description": "Ablation Control (Unhedged Cross-Perp): Long Lowest Funding Perp + Short Highest Funding Perp without Spot Hedge (Measures price divergence drag)"
+    }
+  ]
+}

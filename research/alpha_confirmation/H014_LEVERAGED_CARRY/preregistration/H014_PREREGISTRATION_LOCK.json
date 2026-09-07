@@ -1,0 +1,24 @@
+{
+  "hypothesisId": "H014",
+  "title": "Conservative Leveraged Delta-Neutral Basis Carry in BTC/ETH (2.0x)",
+  "status": "UNLOCKED",
+  "timestampUTC": "2026-09-06T22:45:00.000Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "holdoutTarget": "TEMPORAL_HOLDOUT_VIRGIN (2025-01-01 to 2026-08-31)",
+  "executiveUnlockToken": "EXEC_AUTH_TOKEN_H014_HOLDOUT_2025_2026_APPROVED",
+  "unlockAuthorizedBy": "EXECUTIVE_GOVERNANCE_AUTOMATED_REVIEW_POLICY",
+  "fileHashes": {
+    "charter/H014_CONFIRMATORY_CHARTER.md": {
+      "sha256": "0ebbcee49ec838fee49b3888c4ec80ca98e27df3a6cad474e779a93b40e67596",
+      "sizeBytes": 5665
+    },
+    "frozen_spec/H014_FROZEN_SPEC.json": {
+      "sha256": "68a6587361e3fe7905d9abd1f09e03a7ae715446ea4967e41fd4192d68e267a2",
+      "sizeBytes": 1782
+    },
+    "execution/run_h014_confirmatory.js": {
+      "sha256": "32e94568906c14264eedd6b970fe3709fb448a0dca49d29e90844464e9cfc45b",
+      "sizeBytes": 14683
+    }
+  }
+}

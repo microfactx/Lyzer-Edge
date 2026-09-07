@@ -1,0 +1,17 @@
+{
+  "program": "AD007",
+  "campaignId": "AD007_LEVERAGED_BASIS_CARRY_DISCOVERY",
+  "executionTimestampUTC": "2026-09-06T22:33:44.358Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "totalCellsEvaluated": 12,
+  "multiplicityControl": "Benjamini-Yekutieli (BY, 2001), M=12, c(12)=3.1032",
+  "eligibleCount": 12,
+  "leadCandidateId": "AD007_STATIC_BTC_ETH_1X",
+  "files": [
+    "spec/AD007_CAMPAIGN_SPEC.json",
+    "core/ad007_basis_engine.js",
+    "discovery/run_ad007_discovery.js",
+    "discovery/AD007_DISCOVERY_RESULTS.json",
+    "discovery/AD007_DISCOVERY_REPORT.md"
+  ]
+}

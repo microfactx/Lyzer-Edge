@@ -1,0 +1,80 @@
+{
+  "hypothesisId": "H017",
+  "name": "Productive Collateral Basis Carry in Top-2 Cryptos (2.0x, LST Staking, Delta=0)",
+  "programOrigin": "AD010",
+  "cellOrigin": "AD010_PRODUCTIVE_TOP2_2X_M30",
+  "status": "FROZEN_AWAITING_UNLOCK",
+  "dateFrozenUTC": "2026-09-06T23:58:00.000Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "holdoutPopulation": {
+    "type": "TEMPORAL_HOLDOUT_VIRGIN",
+    "startDateUTC": "2025-01-01T00:00:00.000Z",
+    "endDateUTC": "2026-08-31T23:59:59.999Z",
+    "startMs": 1735689600000,
+    "endMs": 1788220799999,
+    "warmupStartDateUTC": "2024-12-01T00:00:00.000Z",
+    "warmupStartMs": 1733011200000,
+    "targetAssets": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "AVAXUSDT",
+      "LINKUSDT",
+      "DOGEUSDT"
+    ],
+    "timeframe": "8h"
+  },
+  "stakingYields": {
+    "ETHUSDT": 3.5,
+    "SOLUSDT": 6.0,
+    "AVAXUSDT": 5.0,
+    "BTCUSDT": 0.0,
+    "LINKUSDT": 0.0,
+    "DOGEUSDT": 0.0
+  },
+  "parameters": {
+    "strategyType": "PRODUCTIVE_COLLATERAL_BUFFERED_CARRY",
+    "topK": 2,
+    "lookbackDays": 30,
+    "rebalanceDays": 30,
+    "bufferPct": 2.0,
+    "hurdlePct": 3.0,
+    "leverage": 2.0,
+    "maxLeverage": 2.0,
+    "enableStaking": true,
+    "enableCashYield": true,
+    "borrowing": {
+      "annualBorrowRatePct": 4.0
+    },
+    "cashRate": {
+      "annualCashRatePct": 4.0
+    },
+    "delta": 0.0
+  },
+  "friction": {
+    "totalRoundtripBpsPerCycle": 24,
+    "baseRoundtripBps": 24
+  },
+  "confirmatoryGates": {
+    "gate1_annualizedReturn": {
+      "metric": "annualizedReturnPct",
+      "threshold": ">= 6.0"
+    },
+    "gate2_totalReturn": {
+      "metric": "totalNetReturnPct",
+      "threshold": "> 0.0"
+    },
+    "gate3_sharpeRatio": {
+      "metric": "annualizedSharpe",
+      "threshold": ">= 5.0"
+    },
+    "gate4_maxDrawdown": {
+      "metric": "maxDrawdownPct",
+      "threshold": "<= 3.0"
+    },
+    "gate5_statisticalSignificance": {
+      "metric": "pBlock",
+      "threshold": "< 0.0500"
+    }
+  }
+}

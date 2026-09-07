@@ -103,6 +103,7 @@ const wss = new WebSocketServer({ server });
   export { targetAssets };
   
   export const engines = [];
+  export let h017SoakWorker = null;
 
 // Initialize Quant Research Lab Experiment Manager
 const experimentManager = new ExperimentManager(db);
@@ -499,6 +500,20 @@ app.get('/api/engine/trades', (req, res) => {
     recordSystemError('Server', 'API_ERROR');
     res.status(500).json({ success: false, error: err.message });
   }
+});
+
+// H017 Productive Carry Live Wall-Clock Soak Status
+app.get('/api/h017/status', (req, res) => {
+  if (!h017SoakWorker) {
+    return res.json({
+      enabled: false,
+      message: 'H017 Live Soak Worker is not active. Set H017_SOAK_ENABLED=true in environment to activate 7-day wall-clock soak.'
+    });
+  }
+  res.json({
+    enabled: true,
+    ...h017SoakWorker.getStatus()
+  });
 });
 
 
@@ -924,6 +939,21 @@ if (process.env.NODE_ENV !== 'test') {
       engine.start();
     }, idx * 8000);
   });
+
+  // --- H017 PRODUCTIVE CARRY (WALL-CLOCK SHADOW SOAK WORKER) ---
+  if (process.env.H017_SOAK_ENABLED === 'true') {
+    try {
+      const { H017LiveSoakWorker } = await import('../../packages/lyzer-shared/src/execution/h017_live_soak_worker.js');
+      h017SoakWorker = new H017LiveSoakWorker({
+        soakDir: process.env.H017_SOAK_DIR || path.resolve(process.env.DATA_DIR || '/tmp/data', 'h017_soak'),
+        initialCapital: parseFloat(process.env.H017_SOAK_INITIAL_CAPITAL || '100000'),
+        pollIntervalMs: parseInt(process.env.H017_SOAK_INTERVAL_MS || '60000', 10)
+      });
+      h017SoakWorker.start();
+    } catch (err) {
+      console.error('⚠️ [H017 SOAK] Failed to boot live soak worker:', err.message);
+    }
+  }
 }
 
 // Fallback to index.html for SPA routing (must be placed after all API routes)
@@ -956,6 +986,9 @@ if (process.env.NODE_ENV !== 'test') {
   const gracefulShutdown = async (signal) => {
     console.log(`🛑 [SHUTDOWN] ${signal} received. Flushing Causal Memory & closing SQLite gracefully...`);
     try {
+      if (h017SoakWorker && typeof h017SoakWorker.stop === 'function') {
+        h017SoakWorker.stop();
+      }
       if (db && typeof db.flushCausalEvents === 'function') {
         await db.flushCausalEvents().catch(() => {});
       }

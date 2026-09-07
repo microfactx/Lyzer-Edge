@@ -1,0 +1,186 @@
+{
+  "campaignId": "AD008_REGIME_GATED_BASIS_CARRY_DISCOVERY",
+  "program": "AD008",
+  "title": "Adaptive Regime-Gated Basis Carry & Dynamic Yield Harvesting",
+  "family": "REGIME_GATED_DELTA_NEUTRAL_CARRY_ARBITRAGE",
+  "targetAssets": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "AVAXUSDT",
+    "LINKUSDT",
+    "DOGEUSDT"
+  ],
+  "timeframe": "8h",
+  "period": {
+    "startMs": 1672531200000,
+    "endMs": 1735689599999,
+    "label": "2023-01-01 to 2024-12-31 (Strict 2-Year Discovery)"
+  },
+  "friction": {
+    "spotFeeBps": 5,
+    "perpFeeBps": 5,
+    "slippageBps": 2,
+    "totalRoundtripBpsPerCycle": 24
+  },
+  "borrowing": {
+    "annualBorrowRatePct": 4.0,
+    "description": "Continuous annual USD borrowing rate applied strictly during active carry allocation on (L - 1.0)"
+  },
+  "cashRate": {
+    "annualCashRatePct": 0.0,
+    "description": "Conservative baseline cash return when unallocated (in cash). Can also benchmark against 4.0% T-Bill yield."
+  },
+  "cells": [
+    {
+      "id": "AD008_BENCHMARK_STATIC_1X",
+      "type": "STATIC_BENCHMARK",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 1.0,
+      "gating": {
+        "enabled": false
+      },
+      "description": "Control Benchmark: Static 50/50 BTC/ETH delta-neutral carry at 1.0x unleveraged (unconditional)"
+    },
+    {
+      "id": "AD008_BENCHMARK_STATIC_2X",
+      "type": "STATIC_BENCHMARK",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.0,
+      "gating": {
+        "enabled": false
+      },
+      "description": "Control Benchmark: Static 50/50 BTC/ETH delta-neutral carry at 2.0x leverage with continuous 4% borrowing (unconditional)"
+    },
+    {
+      "id": "AD008_GATED_BTC_ETH_1X_M6",
+      "type": "GATED_STATIC",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 1.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 6.0,
+        "exitThresholdAnnPct": 3.5,
+        "lookbackDays": 7
+      },
+      "description": "Gated 50/50 BTC/ETH at 1.0x: Enter if trailing 7d funding >= 6.0% a.a., Exit if < 3.5% a.a."
+    },
+    {
+      "id": "AD008_GATED_BTC_ETH_1X_M8",
+      "type": "GATED_STATIC",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 1.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 8.0,
+        "exitThresholdAnnPct": 5.0,
+        "lookbackDays": 7
+      },
+      "description": "Gated 50/50 BTC/ETH at 1.0x: Enter if trailing 7d funding >= 8.0% a.a., Exit if < 5.0% a.a."
+    },
+    {
+      "id": "AD008_GATED_BTC_ETH_2X_M6",
+      "type": "GATED_STATIC",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 6.0,
+        "exitThresholdAnnPct": 4.0,
+        "lookbackDays": 7
+      },
+      "description": "Gated 50/50 BTC/ETH at 2.0x: Enter if trailing 7d funding >= 6.0% a.a., Exit if < 4.0% a.a."
+    },
+    {
+      "id": "AD008_GATED_BTC_ETH_2X_M8",
+      "type": "GATED_STATIC",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 8.0,
+        "exitThresholdAnnPct": 5.0,
+        "lookbackDays": 7
+      },
+      "description": "Gated 50/50 BTC/ETH at 2.0x: Enter if trailing 7d funding >= 8.0% a.a., Exit if < 5.0% a.a."
+    },
+    {
+      "id": "AD008_GATED_BTC_ETH_2X_M10",
+      "type": "GATED_STATIC",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 10.0,
+        "exitThresholdAnnPct": 6.0,
+        "lookbackDays": 7
+      },
+      "description": "Gated 50/50 BTC/ETH at 2.0x: Enter if trailing 7d funding >= 10.0% a.a., Exit if < 6.0% a.a."
+    },
+    {
+      "id": "AD008_GATED_BTC_ETH_2X_W14",
+      "type": "GATED_STATIC",
+      "allocation": "BTC_ETH_50_50",
+      "leverage": 2.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 8.0,
+        "exitThresholdAnnPct": 5.0,
+        "lookbackDays": 14
+      },
+      "description": "Gated 50/50 BTC/ETH at 2.0x: Enter if trailing 14d funding >= 8.0% a.a., Exit if < 5.0% a.a."
+    },
+    {
+      "id": "AD008_GATED_TOP2_1.5X_M8",
+      "type": "GATED_DYNAMIC_SELECTION",
+      "allocation": "TOP_2_ABOVE_HURDLE",
+      "leverage": 1.5,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 8.0,
+        "exitThresholdAnnPct": 5.0,
+        "lookbackDays": 7
+      },
+      "description": "Adaptive selection: Allocate 1.5x across Top 2 assets whose trailing 7d funding >= 8.0% a.a., Cash if none eligible"
+    },
+    {
+      "id": "AD008_GATED_TOP2_2X_M8",
+      "type": "GATED_DYNAMIC_SELECTION",
+      "allocation": "TOP_2_ABOVE_HURDLE",
+      "leverage": 2.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 8.0,
+        "exitThresholdAnnPct": 5.0,
+        "lookbackDays": 7
+      },
+      "description": "Adaptive selection: Allocate 2.0x across Top 2 assets whose trailing 7d funding >= 8.0% a.a., Cash if none eligible"
+    },
+    {
+      "id": "AD008_GATED_TOP2_2X_M10",
+      "type": "GATED_DYNAMIC_SELECTION",
+      "allocation": "TOP_2_ABOVE_HURDLE",
+      "leverage": 2.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 10.0,
+        "exitThresholdAnnPct": 6.0,
+        "lookbackDays": 7
+      },
+      "description": "Adaptive selection: Allocate 2.0x across Top 2 assets whose trailing 7d funding >= 10.0% a.a., Cash if none eligible"
+    },
+    {
+      "id": "AD008_GATED_TOP3_2X_M8",
+      "type": "GATED_DYNAMIC_SELECTION",
+      "allocation": "TOP_3_ABOVE_HURDLE",
+      "leverage": 2.0,
+      "gating": {
+        "enabled": true,
+        "entryThresholdAnnPct": 8.0,
+        "exitThresholdAnnPct": 5.0,
+        "lookbackDays": 7
+      },
+      "description": "Adaptive selection: Allocate 2.0x across Top 3 assets whose trailing 7d funding >= 8.0% a.a., Cash if none eligible"
+    }
+  ]
+}

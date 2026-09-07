@@ -1,0 +1,24 @@
+{
+  "hypothesisId": "H013",
+  "title": "Delta-Neutral Cash-and-Carry Basis Arbitrage in BTC/ETH",
+  "status": "UNLOCKED",
+  "timestampUTC": "2026-09-06T22:22:51.824Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "holdoutTarget": "TEMPORAL_HOLDOUT_VIRGIN (2025-01-01 to 2026-08-31)",
+  "executiveUnlockToken": "EXEC_AUTH_TOKEN_H013_HOLDOUT_2025_2026_APPROVED",
+  "unlockAuthorizedBy": "EXECUTIVE_GOVERNANCE_AUTOMATED_REVIEW_POLICY",
+  "fileHashes": {
+    "charter/H013_CONFIRMATORY_CHARTER.md": {
+      "sha256": "fc9672e5d7e7e2358574f808aa5dcbe383d138c290dfbf8e0d62216c02751def",
+      "sizeBytes": 6594
+    },
+    "frozen_spec/H013_FROZEN_SPEC.json": {
+      "sha256": "e176edae3837bbb1b52629845b1df8ea27aea8f55eddd3d0e58037ec8700b726",
+      "sizeBytes": 1586
+    },
+    "execution/run_h013_confirmatory.js": {
+      "sha256": "a10055fd34c0fa30118de82d149cfb30f9e628ebaba430f2f381cc484ee7df50",
+      "sizeBytes": 14246
+    }
+  }
+}

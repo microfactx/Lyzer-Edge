@@ -1,0 +1,63 @@
+{
+  "hypothesisId": "H013",
+  "name": "Delta-Neutral Cash-and-Carry Basis Arbitrage in BTC/ETH",
+  "timestampUTC": "2026-09-06T22:22:54.340Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "holdoutWindow": {
+    "startDateUTC": "2025-01-01T00:00:00.000Z",
+    "endDateUTC": "2026-08-31T23:59:59.999Z",
+    "total8hPeriods": 1824
+  },
+  "metrics": {
+    "totalNetReturnPct": 6.5,
+    "annualizedReturnPct": 3.85,
+    "annualizedSharpe": 22.77,
+    "maxDrawdownPct": 0.49,
+    "pBlock": 0.0001,
+    "qBY": 0.0001,
+    "profitFactor": 16.14,
+    "meanNetRPerBlock": 0.143,
+    "ci95Lower": 0.107,
+    "ci95Upper": 0.177,
+    "legs": {
+      "BTCUSDT": {
+        "totalReturnPct": 6.85,
+        "annualizedReturnPct": 4.06,
+        "positive": true
+      },
+      "ETHUSDT": {
+        "totalReturnPct": 5.9,
+        "annualizedReturnPct": 3.5,
+        "positive": true
+      }
+    }
+  },
+  "gates": {
+    "gate1_annualizedReturn": {
+      "threshold": ">= +6.0%",
+      "observed": "+3.85%",
+      "pass": false
+    },
+    "gate2_sharpeRatio": {
+      "threshold": ">= 5.0",
+      "observed": "22.77",
+      "pass": true
+    },
+    "gate3_maxDrawdown": {
+      "threshold": "<= 2.0%",
+      "observed": "0.49%",
+      "pass": true
+    },
+    "gate4_statisticalSignificance": {
+      "threshold": "< 0.0500",
+      "observed": "0.0001",
+      "pass": true
+    },
+    "gate5_crossLegBreadth": {
+      "threshold": "BTC & ETH > 0",
+      "observed": "BTC=+6.85%, ETH=+5.9%",
+      "pass": true
+    }
+  },
+  "finalVerdict": "CONFIRMATORY_FAIL"
+}

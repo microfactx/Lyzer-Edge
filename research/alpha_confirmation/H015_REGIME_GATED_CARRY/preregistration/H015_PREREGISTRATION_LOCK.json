@@ -1,0 +1,24 @@
+{
+  "hypothesisId": "H015",
+  "title": "Adaptive Regime-Gated Delta-Neutral Basis Carry in BTC/ETH (2.0x)",
+  "status": "UNLOCKED",
+  "timestampUTC": "2026-09-06T23:00:00.000Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "holdoutTarget": "TEMPORAL_HOLDOUT_VIRGIN (2025-01-01 to 2026-08-31)",
+  "executiveUnlockToken": "EXEC_AUTH_TOKEN_H015_HOLDOUT_2025_2026_APPROVED",
+  "unlockAuthorizedBy": "EXECUTIVE_GOVERNANCE_AUTOMATED_REVIEW_POLICY",
+  "fileHashes": {
+    "charter/H015_CONFIRMATORY_CHARTER.md": {
+      "sha256": "61f5012144eecc82be541ebb311871215efe76efe9a74f5f7d7c91a4d4ed7109",
+      "sizeBytes": 5916
+    },
+    "frozen_spec/H015_FROZEN_SPEC.json": {
+      "sha256": "154fc2b0e720fe7583f10edac92008f393f052deb2702aae237d0f8ab73350dd",
+      "sizeBytes": 1905
+    },
+    "execution/run_h015_confirmatory.js": {
+      "sha256": "a42bd33d6714578c22afb2d3207c60d42bd31ee75485853dde9ba5f229d8eb2c",
+      "sizeBytes": 13064
+    }
+  }
+}

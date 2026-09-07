@@ -1,0 +1,13 @@
+{
+  "campaignId": "AD010_PRODUCTIVE_COLLATERAL_CARRY",
+  "timestampUTC": "2026-09-06T23:56:42.313Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "discoveryPeriod": {
+    "startMs": 1672531200000,
+    "endMs": 1735689599999,
+    "label": "2023-01-01 to 2024-12-31 (Strict 2-Year Discovery)"
+  },
+  "evaluatedHypotheses": 12,
+  "eligibleHypothesesUnderBY": 11,
+  "multiplicityMethod": "Benjamini-Yekutieli (BY, 2001), c(12)=3.1032"
+}

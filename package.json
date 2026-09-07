@@ -10,7 +10,8 @@
     "build": "npm run build --workspace=\"lyzer edge\"",
     "start": "node --max-old-space-size=384 \"lyzer edge/backend/server.js\"",
     "backend": "node --max-old-space-size=384 \"lyzer edge/backend/server.js\"",
-    "test:p0": "npm run test:p0 --workspace=\"lyzer edge\""
+    "test:p0": "npm run test:p0 --workspace=\"lyzer edge\"",
+    "test:verify": "npm run test:verify --workspace=\"lyzer edge\""
   },
   "allowScripts": {
     "esbuild@0.28.1": true,

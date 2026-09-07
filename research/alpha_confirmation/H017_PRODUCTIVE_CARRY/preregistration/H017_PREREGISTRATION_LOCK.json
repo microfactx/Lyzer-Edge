@@ -1,0 +1,28 @@
+{
+  "hypothesisId": "H017",
+  "campaignId": "H017_PRODUCTIVE_CARRY",
+  "title": "Productive Collateral Basis Carry in Top-2 Cryptos (2.0x, LST Staking, Delta=0)",
+  "status": "UNLOCKED",
+  "dateLockedUTC": "2026-09-06T23:59:00.000Z",
+  "executiveUnlockToken": "EXECUTIVE_UNLOCK_TOKEN_H017_CONFIRMATORY_AUTHORIZATION_20260906",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "frozenFiles": {
+    "charter/H017_CONFIRMATORY_CHARTER.md": {
+      "sha256": "a2d03b282e9d324cad022df1183f0d719732c370b7494760fb37119bf5a2712d",
+      "sizeBytes": 6576
+    },
+    "frozen_spec/H017_FROZEN_SPEC.json": {
+      "sha256": "d6360ac286830bde45139b1542c9b155a4de6e8376979353dde23d2f3c57ff3e",
+      "sizeBytes": 2023
+    },
+    "core/h017_confirmatory_engine.js": {
+      "sha256": "a3ca62ddfdc80b8411ebe71d8105fa0f3cf3c6c21ce3768ad82a96eb32794cf0",
+      "sizeBytes": 9081
+    },
+    "execution/run_h017_confirmatory.js": {
+      "sha256": "27d850ceb10f648b1d08ef75a1b845b682fe68671dd0c45cf37ca6321a5b6b3b",
+      "sizeBytes": 12096
+    }
+  },
+  "unlockedAtUTC": "2026-09-06T23:59:30.000Z"
+}

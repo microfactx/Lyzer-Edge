@@ -1,0 +1,28 @@
+{
+  "hypothesisId": "H016",
+  "campaignId": "H016_BUFFERED_CROSS_CARRY",
+  "title": "Cross-Asset Friction-Buffered Basis Carry in Top-2 Core Cryptos (2.0x, Delta=0)",
+  "status": "UNLOCKED",
+  "dateLockedUTC": "2026-09-06T23:17:50.349Z",
+  "executiveUnlockToken": "EXECUTIVE_UNLOCK_TOKEN_H016_CONFIRMATORY_AUTHORIZATION_20260906",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "frozenFiles": {
+    "charter/H016_CONFIRMATORY_CHARTER.md": {
+      "sha256": "a2728cdf7dca7cb1a4e429dbd75f3c5dfd65c461bfca929b43d41e546d6db7d3",
+      "sizeBytes": 6006
+    },
+    "frozen_spec/H016_FROZEN_SPEC.json": {
+      "sha256": "9d555413f4c817d0aa8d215dccf5543ce244b91e2f821503ef516230aace312d",
+      "sizeBytes": 1832
+    },
+    "core/h016_confirmatory_engine.js": {
+      "sha256": "731d7ecb3c08d8d751613f98217c81b5d8fee7742c47418fe6fbfcf760239f91",
+      "sizeBytes": 10008
+    },
+    "execution/run_h016_confirmatory.js": {
+      "sha256": "89ff372ba6a5a72ae090ee87d03e717dbd740c1ac2f72673e0f4605324e8ceca",
+      "sizeBytes": 11999
+    }
+  },
+  "unlockedAtUTC": "2026-09-06T23:18:10.436Z"
+}
