@@ -12,6 +12,7 @@
 - [directive] LYZER EDGE — Cognitive Operating Directive v1.0 → cognitive_directive.md
 - [research] Trilha Científica (B001-B038), Fail-Closed G5 e Memorando B037 → tech-decisions.md
 - [research] Pesquisa de Alfa AD003–AD006: Falsificações H009–H012 e Sucesso de Carry Delta-Neutro H013 → alpha-research-cycle-ad003-ad006.md
+- [research] Renda Passiva TradFi AD013–AD016 & H017 Soak: Sucesso Basket Carry AD015 (+9.07%) e Falsificação EM → alpha-research-tradfi-passive-income.md
 - [line-b] Epistemologia do IGHT e Observatório → line-b-epistemology.md
 - [reference] Complete Codebase Structure & Architecture Map → project_structure.md
 - [reference] Master Cognitive Snapshot of Lyzer Labs Architecture → lyzer_core_architecture_snapshot.md

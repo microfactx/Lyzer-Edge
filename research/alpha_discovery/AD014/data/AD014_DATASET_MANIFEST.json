@@ -1,0 +1,40 @@
+{
+  "program": "ALPHA_DISCOVERY_AD014",
+  "createdDate": "2026-09-07T07:56:09.504Z",
+  "discoveryWindow": "2023-11-21T00:00:00.000Z -> 2024-12-31T23:59:59.999Z",
+  "holdoutWindow": "2025-01-01T00:00:00.000Z -> 2026-09-07T00:00:00.000Z",
+  "assets": {
+    "USDJPY": {
+      "discoveryCount": 6846,
+      "discoverySha256": "2e2dc88ac1e2f608d3780396be40e8ba777318512beb6622b941f5639a99379c",
+      "discoveryStart": "2023-11-21T00:00:00.000Z",
+      "discoveryEnd": "2024-12-31T21:00:00.000Z",
+      "holdoutCount": 10284,
+      "holdoutSha256": "60fe967e9585be7ab493aefdedcbe5e764096d0e4957fb0722cb79b8ff44454a"
+    },
+    "EURUSD": {
+      "discoveryCount": 6882,
+      "discoverySha256": "ea8884d37b44a99338828af8092354fbc8eebcd11d0f750135689d9f4002185a",
+      "discoveryStart": "2023-11-21T00:00:00.000Z",
+      "discoveryEnd": "2024-12-31T22:00:00.000Z",
+      "holdoutCount": 10343,
+      "holdoutSha256": "c43144dd2ac5443eef4a7267983661ff822e2e22739abb8c6ac954d070ba591e"
+    },
+    "GBPUSD": {
+      "discoveryCount": 6883,
+      "discoverySha256": "060ffc2ac67c6aaeb0df44caeb3af8d65749212b4889f0e880d8d2049490e310",
+      "discoveryStart": "2023-11-21T00:00:00.000Z",
+      "discoveryEnd": "2024-12-31T22:00:00.000Z",
+      "holdoutCount": 10344,
+      "holdoutSha256": "3d9528a9ad582c999463f0f0b1128a447752fd587f3a04d3633af974edb04b7a"
+    },
+    "BTCUSDT": {
+      "discoveryCount": 10786,
+      "discoverySha256": "c044b974f2c52334def587157741056a382a4ddc2378b7b76586ddfd3bc4be77",
+      "discoveryStart": "2023-10-09T14:00:00.000Z",
+      "discoveryEnd": "2024-12-31T23:00:00.000Z",
+      "holdoutCount": 14473,
+      "holdoutSha256": "7bd25999753f6ecca027477fb733f7d61feea9c70225963115f1722c2d63fdbc"
+    }
+  }
+}

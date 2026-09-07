@@ -1,0 +1,48 @@
+{
+  "program": "ALPHA_DISCOVERY_AD015",
+  "createdDate": "2026-09-07T08:03:26.692Z",
+  "discoveryWindow": "2023-11-21T00:00:00.000Z -> 2024-12-31T23:59:59.999Z",
+  "holdoutWindow": "2025-01-01T00:00:00.000Z -> 2026-09-07T00:00:00.000Z",
+  "assets": {
+    "USDJPY": {
+      "discoveryCount": 6846,
+      "discoverySha256": "2e2dc88ac1e2f608d3780396be40e8ba777318512beb6622b941f5639a99379c",
+      "discoveryStart": "2023-11-21T00:00:00.000Z",
+      "discoveryEnd": "2024-12-31T21:00:00.000Z",
+      "holdoutCount": 10284,
+      "holdoutSha256": "60fe967e9585be7ab493aefdedcbe5e764096d0e4957fb0722cb79b8ff44454a",
+      "holdoutStart": "2025-01-01T18:00:00.000Z",
+      "holdoutEnd": "2026-09-07T07:40:09.000Z"
+    },
+    "GBPJPY": {
+      "discoveryCount": 6884,
+      "discoverySha256": "33b9ba2e3ebd459d3609c9c2d1ea8860c5e71d6adc4352929c0baa31eebb650b",
+      "discoveryStart": "2023-11-21T00:00:00.000Z",
+      "discoveryEnd": "2024-12-31T22:00:00.000Z",
+      "holdoutCount": 10350,
+      "holdoutSha256": "f80292b8795dd6df350c4cfdc42ce14b4045f2913afdc6511c3df10fe70a7d59",
+      "holdoutStart": "2025-01-01T18:00:00.000Z",
+      "holdoutEnd": "2026-09-07T08:03:26.000Z"
+    },
+    "AUDJPY": {
+      "discoveryCount": 6886,
+      "discoverySha256": "c38fd98d9dcc384874ed8c98521ca03fd658c5ae9058d29df9d819948a2eea82",
+      "discoveryStart": "2023-11-21T00:00:00.000Z",
+      "discoveryEnd": "2024-12-31T22:00:00.000Z",
+      "holdoutCount": 10354,
+      "holdoutSha256": "bc5f605fe058b33227f43175394e300c8bf08cbef4d98ffe5629c09da506f404",
+      "holdoutStart": "2025-01-01T18:00:00.000Z",
+      "holdoutEnd": "2026-09-07T08:03:27.000Z"
+    },
+    "CADJPY": {
+      "discoveryCount": 6887,
+      "discoverySha256": "36e1fe415934dfd9e804d13d18f45cab08b6cdcc663bb828f0ac5ad619ac4623",
+      "discoveryStart": "2023-11-21T00:00:00.000Z",
+      "discoveryEnd": "2024-12-31T22:00:00.000Z",
+      "holdoutCount": 10353,
+      "holdoutSha256": "6d3dd9e7df9fb03c65ce2186f489025dfca489d2ae86d7df462d2a841768351a",
+      "holdoutStart": "2025-01-01T18:00:00.000Z",
+      "holdoutEnd": "2026-09-07T08:03:27.000Z"
+    }
+  }
+}

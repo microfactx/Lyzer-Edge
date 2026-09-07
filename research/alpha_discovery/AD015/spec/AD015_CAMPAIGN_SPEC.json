@@ -1,0 +1,54 @@
+{
+  "program": "AD015_MULTI_CURRENCY_CARRY_BASKET",
+  "name": "Diversified Multi-Currency Carry Basket & Risk-Parity Passive Income Engine",
+  "version": "1.0.0",
+  "createdDate": "2026-09-07T00:00:00.000Z",
+  "governance": {
+    "track": "LABORATORY_EXPERIMENTAL",
+    "authority": "Senior CTO & Executive Engineering Director",
+    "status": "DISCOVERY_EXECUTION",
+    "fdrMethod": "BENJAMINI_YEKUTIELI",
+    "totalHypotheses": 16,
+    "bootstrapIterations": 10000,
+    "blockDurationDays": 14,
+    "significanceLevel": 0.0500
+  },
+  "macroRates": {
+    "SAFE_HAVEN_TBILL_RATE": 0.0500
+  },
+  "pairs": {
+    "USDJPY": { "annualCarryRate": 0.0520, "turnoverFrictionBps": 3.0 },
+    "GBPJPY": { "annualCarryRate": 0.0490, "turnoverFrictionBps": 3.0 },
+    "AUDJPY": { "annualCarryRate": 0.0425, "turnoverFrictionBps": 3.0 },
+    "CADJPY": { "annualCarryRate": 0.0465, "turnoverFrictionBps": 3.0 }
+  },
+  "gates": {
+    "gate1_minAnnualizedReturnPct": 7.50,
+    "gate2_minTotalReturnPct": 0.00,
+    "gate3_minSharpeRatio": 2.00,
+    "gate4_maxDrawdownPct": 3.50,
+    "gate5_maxBlockBootstrapPValue": 0.0500,
+    "gate5_maxBenjaminiYekutieliQ": 0.0500
+  },
+  "cells": [
+    { "id": "AD015_EW_UNIFIED_EMA100_VOL120", "weighting": "EQUAL_WEIGHT", "circuitBreaker": "UNIFIED_BASKET", "emaLookback": 100, "volRatioThreshold": 1.20 },
+    { "id": "AD015_EW_UNIFIED_EMA100_VOL135", "weighting": "EQUAL_WEIGHT", "circuitBreaker": "UNIFIED_BASKET", "emaLookback": 100, "volRatioThreshold": 1.35 },
+    { "id": "AD015_EW_UNIFIED_EMA200_VOL120", "weighting": "EQUAL_WEIGHT", "circuitBreaker": "UNIFIED_BASKET", "emaLookback": 200, "volRatioThreshold": 1.20 },
+    { "id": "AD015_EW_UNIFIED_EMA200_VOL135", "weighting": "EQUAL_WEIGHT", "circuitBreaker": "UNIFIED_BASKET", "emaLookback": 200, "volRatioThreshold": 1.35 },
+
+    { "id": "AD015_EW_INDEP_EMA100_VOL120", "weighting": "EQUAL_WEIGHT", "circuitBreaker": "INDEPENDENT_PAIRS", "emaLookback": 100, "volRatioThreshold": 1.20 },
+    { "id": "AD015_EW_INDEP_EMA100_VOL135", "weighting": "EQUAL_WEIGHT", "circuitBreaker": "INDEPENDENT_PAIRS", "emaLookback": 100, "volRatioThreshold": 1.35 },
+    { "id": "AD015_EW_INDEP_EMA200_VOL120", "weighting": "EQUAL_WEIGHT", "circuitBreaker": "INDEPENDENT_PAIRS", "emaLookback": 200, "volRatioThreshold": 1.20 },
+    { "id": "AD015_EW_INDEP_EMA200_VOL135", "weighting": "EQUAL_WEIGHT", "circuitBreaker": "INDEPENDENT_PAIRS", "emaLookback": 200, "volRatioThreshold": 1.35 },
+
+    { "id": "AD015_RP_UNIFIED_EMA100_VOL120", "weighting": "RISK_PARITY", "circuitBreaker": "UNIFIED_BASKET", "emaLookback": 100, "volRatioThreshold": 1.20 },
+    { "id": "AD015_RP_UNIFIED_EMA100_VOL135", "weighting": "RISK_PARITY", "circuitBreaker": "UNIFIED_BASKET", "emaLookback": 100, "volRatioThreshold": 1.35 },
+    { "id": "AD015_RP_UNIFIED_EMA200_VOL120", "weighting": "RISK_PARITY", "circuitBreaker": "UNIFIED_BASKET", "emaLookback": 200, "volRatioThreshold": 1.20 },
+    { "id": "AD015_RP_UNIFIED_EMA200_VOL135", "weighting": "RISK_PARITY", "circuitBreaker": "UNIFIED_BASKET", "emaLookback": 200, "volRatioThreshold": 1.35 },
+
+    { "id": "AD015_RP_INDEP_EMA100_VOL120", "weighting": "RISK_PARITY", "circuitBreaker": "INDEPENDENT_PAIRS", "emaLookback": 100, "volRatioThreshold": 1.20 },
+    { "id": "AD015_RP_INDEP_EMA100_VOL135", "weighting": "RISK_PARITY", "circuitBreaker": "INDEPENDENT_PAIRS", "emaLookback": 100, "volRatioThreshold": 1.35 },
+    { "id": "AD015_RP_INDEP_EMA200_VOL120", "weighting": "RISK_PARITY", "circuitBreaker": "INDEPENDENT_PAIRS", "emaLookback": 200, "volRatioThreshold": 1.20 },
+    { "id": "AD015_RP_INDEP_EMA200_VOL135", "weighting": "RISK_PARITY", "circuitBreaker": "INDEPENDENT_PAIRS", "emaLookback": 200, "volRatioThreshold": 1.35 }
+  ]
+}

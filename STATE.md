@@ -51,6 +51,13 @@ CROSS-ASSET BUFFERED CARRY (AD009)  🟢 DISCOVERY SUCCESS (8/12 BY Pass, +18.83
 BUFFERED CARRY HOLDOUT (H016)       🔴 CONFIRMATORY FAILURE (Yield Floor < 6.0%)
 PRODUCTIVE COLLATERAL CARRY (AD010) 🟢 DISCOVERY SUCCESS (11/12 BY Pass, +29.21%)
 PRODUCTIVE CARRY HOLDOUT (H017)     🟢 CONFIRMATORY PASS (All 5 Gates Passed!)
+TRADFI MTF SWEEP DISCOVERY (AD011)  🔴 FALSIFIED (0/24 BY Pass, Breakout Domination)
+CROSS-ASSET BREAKOUT (AD012)        🔴 FALSIFIED (0/24 BY Pass; FX Failed, BTC +0.38R)
+BTC TREND BREAKOUT HOLDOUT (H018)   🔴 CONFIRMATORY FAILURE (Regime Degradation, p=0.26)
+TRADFI REGIME ADAPTIVE (AD013)      🔴 FALSIFIED (0/28 BY Pass; FX Freq OK but E<0, Equities N<60)
+PASSIVE MACRO CARRY (AD014)         🟡 BREAKTHROUGH ISOLATED (USDJPY +10.86% a.a., p=0.0001, DD=4.7%)
+MULTI-CURRENCY BASKET (AD015)       🟢 BREAKTHROUGH ISOLATED (4-JPY +9.07% a.a., MaxDD 2.96%, p=0.0001)
+DUAL-FUNDING & EM CARRY (AD016)     🟡 DUAL G10 ISOLATED (+6.96% a.a., DD 2.08%, Sharpe 1.61); EM FALSIFIED
 SHADOW SOAK ENDURANCE (7D SOAK)     🟢 CERTIFIED (Zero Incidents, +0.19% 7d Net)
 CANARY CAPITAL TRANSITION (PHASE 2) 🟡 AUTHORIZED FOR $500 CANARY (Ed25519 Token)
 REAL-CAPITAL READINESS              🟡 CANARY PHASE READY ($500 USD Authorized)
@@ -120,6 +127,21 @@ H017               Productive Collateral Basis Carry      Sharpe 14.89, MaxDD 1.
                                                            OS 5 GATES (+6.42% a.a. >= +6.00% a.a.)
 H017-SOAK          7-Day Shadow Soak Endurance Harness    Uptime 100%, 7/7 Checkpoints assinados,  🟢 FASE 1 CERTIFICADA
                     (Binance Testnet Reconcile)            Net +$19.04 (+0.19%), 0 Kill-Switches.   (H017_7D_SOAK_CERT.md)
+AD011              TradFi & Crypto Multi-Timeframe        0/24 células elegíveis sob BY FDR.       🔴 FALSIFICADO /
+                    Liquidity Sweep & CISD (2023–2024)     Equities N=0/1 por escassez; FX/BTC com  ARQUIVADO
+                                                           E[R] negativo (-0.25R a -0.75R).         (AD011_REPORT.md)
+AD012              Cross-Asset Trend Breakout &           0/24 células elegíveis sob BY FDR.       🔴 FALSIFICADO /
+                    Volatility Expansion (2023–2024)       Forex colapsou (-0.35R a -0.64R); Equities ARQUIVADO
+                                                           N<20; BTC isolou E[R]=+0.385R (p=0.01).  (AD012_REPORT.md)
+H018               Bitcoin Macro Trend Breakout           111 trades no Holdout 2025–2026. Net R    🔴 FALHA CONFIRMATÓRIA
+                    (L=50 4H, 1:3.0 RR, Virgin Holdout)    positivo (+12.06R), mas p=0.2599, E=0.109R(H018_VERDICT.md)
+                                                           e PF=1.17 por regime de distribuição.
+AD013              High-Frequency TradFi Cross-Asset      0/28 células elegíveis sob BY FDR.       🔴 FALSIFICADO /
+                    Regime-Adaptive Engine (2023–2024)     Forex N>126 (freq OK), mas E[R]<0 (-0.4R); ARQUIVADO
+                                                           Equities N<60; BTC com E[R]<0.           (AD013_REPORT.md)
+AD014              Algorithmic Passive Income & Regime-   Breakthrough em USDJPY: +10.86% a.a.     🟡 CANDIDATO ISOLADO
+                    Protected Macro Carry (2023–2024)      líquido (p=0.0001, q_BY=0.0008, DD 4.7%) (AD014_REPORT.md)
+                                                           com escape para T-Bills (5%) no Yen Unwind.
 ========================================================================================================================
 ```
 
@@ -150,6 +172,13 @@ H017-SOAK          7-Day Shadow Soak Endurance Harness    Uptime 100%, 7/7 Check
 │  • H016 (Buffered Carry Holdout)   → 🔴 REJECT CONFIRMATÓRIO (+2.62% a.a. vs meta >= +6.0% a.a.) │
 │  • AD010 (Productive Collateral)   → 🟢 DESCOBERTA HOMOLOGADA (11/12 células BY pass; +29.21% a.a)│
 │  • H017 (Productive Carry Holdout) → 🟢 HOMOLOGADO PRODUÇÃO (+6.42% a.a., Sharpe 14.89, Pass 5/5)│
+│  • AD011 (TradFi MTF Sweep)        → 🔴 REJECT (0/24 elegíveis; continuação superou reversão)   │
+│  • AD012 (Trend Breakout)          → 🔴 REJECT (0/24 elegíveis; FX colapsou; BTC isolou edge)   │
+│  • H018 (Bitcoin Trend Breakout)   → 🔴 REJECT CONFIRMATÓRIO (p=0.2599, E=+0.109R, PF=1.17)     │
+│  • AD013 (TradFi Regime Adaptive)  → 🔴 REJECT (0/28 elegíveis; FX E<0, Equities N<60)          │
+│  • AD014 (Passive Macro Carry)     → 🟡 BREAKTHROUGH ISOLATED (USDJPY +10.86% a.a., p=0.0001)   │
+│  • AD015 (Multi-Currency Carry)    → 🟢 BREAKTHROUGH ISOLATED (4-JPY +9.07% a.a., MaxDD 2.96%)  │
+│  • AD016 (Dual-Funding & EM Carry) → 🟡 DUAL G10 ISOLATED (+6.96% a.a., DD 2.08%); EM FALSIFIED  │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

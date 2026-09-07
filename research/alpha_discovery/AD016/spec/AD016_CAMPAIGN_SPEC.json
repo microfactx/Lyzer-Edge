@@ -1,0 +1,79 @@
+{
+  "campaignId": "AD016",
+  "title": "Dual-Funding G10 & High-Yield Emerging Market Carry Engines with Unified Volatility Protection & T-Bills Anchor",
+  "registeredAt": "2026-09-07T08:15:00.000Z",
+  "authority": "Senior CTO & Executive Engineering Director",
+  "governance": {
+    "failClosed": true,
+    "productionV8Sha256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+    "productionIsolationEnforced": true,
+    "holdoutDiscipline": "2025-01-01 to Present Strictly Sealed",
+    "multiplicityControl": "Benjamini-Yekutieli (BY, 2001) FDR on M=24",
+    "byCorrectionFactor": 3.77596
+  },
+  "discoveryWindow": {
+    "start": "2023-11-21T00:00:00.000Z",
+    "end": "2024-12-31T23:59:59.999Z",
+    "durationWeeks": 58
+  },
+  "instruments": {
+    "trackA_G10_JPY": [
+      { "symbol": "USDJPY", "type": "FOREX", "grossCarryAnnualPct": 5.20, "direction": "LONG", "spreadBps": 2.0 },
+      { "symbol": "GBPJPY", "type": "FOREX", "grossCarryAnnualPct": 5.15, "direction": "LONG", "spreadBps": 2.0 },
+      { "symbol": "AUDJPY", "type": "FOREX", "grossCarryAnnualPct": 4.25, "direction": "LONG", "spreadBps": 2.0 },
+      { "symbol": "CADJPY", "type": "FOREX", "grossCarryAnnualPct": 4.65, "direction": "LONG", "spreadBps": 2.0 }
+    ],
+    "trackA_G10_CHF": [
+      { "symbol": "USDCHF", "type": "FOREX", "grossCarryAnnualPct": 4.08, "direction": "LONG", "spreadBps": 2.0 },
+      { "symbol": "GBPCHF", "type": "FOREX", "grossCarryAnnualPct": 4.00, "direction": "LONG", "spreadBps": 2.0 },
+      { "symbol": "AUDCHF", "type": "FOREX", "grossCarryAnnualPct": 3.10, "direction": "LONG", "spreadBps": 2.0 },
+      { "symbol": "CADCHF", "type": "FOREX", "grossCarryAnnualPct": 3.50, "direction": "LONG", "spreadBps": 2.0 }
+    ],
+    "trackB_EM": [
+      { "symbol": "USDMXN", "type": "FOREX_EM", "grossCarryAnnualPct": 5.92, "direction": "SHORT", "spreadBps": 6.0 },
+      { "symbol": "USDBRL", "type": "FOREX_EM", "grossCarryAnnualPct": 6.42, "direction": "SHORT", "spreadBps": 6.0 },
+      { "symbol": "USDZAR", "type": "FOREX_EM", "grossCarryAnnualPct": 2.92, "direction": "SHORT", "spreadBps": 6.0 },
+      { "symbol": "USDPLN", "type": "FOREX_EM", "grossCarryAnnualPct": 0.42, "direction": "SHORT", "spreadBps": 4.0 }
+    ]
+  },
+  "frictions": {
+    "g10SpreadBps": 2.0,
+    "emSpreadBps": 6.0,
+    "turnoverExecutionFeeBps": 1.0,
+    "tBillAnnualYieldPct": 5.00
+  },
+  "evaluationGates": {
+    "gate1_annualizedNetReturn": 7.50,
+    "gate2_totalNetReturn": 0.00,
+    "gate3_sharpeRatio": 1.50,
+    "gate4_maxDrawdown": 3.50,
+    "gate5_pValueBlock": 0.0500,
+    "gate5_qBY": 0.0500
+  },
+  "cells": [
+    { "id": "AD016_DF_EW_EMA100_VOL120", "track": "TRACK_A_DUAL_FUNDING", "weighting": "EQUAL_WEIGHT", "emaLookback": 100, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_DF_EW_EMA100_VOL135", "track": "TRACK_A_DUAL_FUNDING", "weighting": "EQUAL_WEIGHT", "emaLookback": 100, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_DF_EW_EMA200_VOL120", "track": "TRACK_A_DUAL_FUNDING", "weighting": "EQUAL_WEIGHT", "emaLookback": 200, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_DF_EW_EMA200_VOL135", "track": "TRACK_A_DUAL_FUNDING", "weighting": "EQUAL_WEIGHT", "emaLookback": 200, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_DF_RP_EMA100_VOL120", "track": "TRACK_A_DUAL_FUNDING", "weighting": "RISK_PARITY", "emaLookback": 100, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_DF_RP_EMA100_VOL135", "track": "TRACK_A_DUAL_FUNDING", "weighting": "RISK_PARITY", "emaLookback": 100, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_DF_RP_EMA200_VOL120", "track": "TRACK_A_DUAL_FUNDING", "weighting": "RISK_PARITY", "emaLookback": 200, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_DF_RP_EMA200_VOL135", "track": "TRACK_A_DUAL_FUNDING", "weighting": "RISK_PARITY", "emaLookback": 200, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_EM_EW_EMA100_VOL120", "track": "TRACK_B_EM_HIGH_YIELD", "weighting": "EQUAL_WEIGHT", "emaLookback": 100, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_EM_EW_EMA100_VOL135", "track": "TRACK_B_EM_HIGH_YIELD", "weighting": "EQUAL_WEIGHT", "emaLookback": 100, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_EM_EW_EMA200_VOL120", "track": "TRACK_B_EM_HIGH_YIELD", "weighting": "EQUAL_WEIGHT", "emaLookback": 200, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_EM_EW_EMA200_VOL135", "track": "TRACK_B_EM_HIGH_YIELD", "weighting": "EQUAL_WEIGHT", "emaLookback": 200, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_EM_CW_EMA100_VOL120", "track": "TRACK_B_EM_HIGH_YIELD", "weighting": "CARRY_WEIGHTED", "emaLookback": 100, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_EM_CW_EMA100_VOL135", "track": "TRACK_B_EM_HIGH_YIELD", "weighting": "CARRY_WEIGHTED", "emaLookback": 100, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_EM_CW_EMA200_VOL120", "track": "TRACK_B_EM_HIGH_YIELD", "weighting": "CARRY_WEIGHTED", "emaLookback": 200, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_EM_CW_EMA200_VOL135", "track": "TRACK_B_EM_HIGH_YIELD", "weighting": "CARRY_WEIGHTED", "emaLookback": 200, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_HYB_EW_EMA100_VOL120", "track": "TRACK_C_HYBRID_MULTI_ASSET", "weighting": "EQUAL_WEIGHT", "emaLookback": 100, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_HYB_EW_EMA100_VOL135", "track": "TRACK_C_HYBRID_MULTI_ASSET", "weighting": "EQUAL_WEIGHT", "emaLookback": 100, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_HYB_EW_EMA200_VOL120", "track": "TRACK_C_HYBRID_MULTI_ASSET", "weighting": "EQUAL_WEIGHT", "emaLookback": 200, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_HYB_EW_EMA200_VOL135", "track": "TRACK_C_HYBRID_MULTI_ASSET", "weighting": "EQUAL_WEIGHT", "emaLookback": 200, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_HYB_RP_EMA100_VOL120", "track": "TRACK_C_HYBRID_MULTI_ASSET", "weighting": "RISK_PARITY", "emaLookback": 100, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_HYB_RP_EMA100_VOL135", "track": "TRACK_C_HYBRID_MULTI_ASSET", "weighting": "RISK_PARITY", "emaLookback": 100, "volatilityMultiplier": 1.35 },
+    { "id": "AD016_HYB_RP_EMA200_VOL120", "track": "TRACK_C_HYBRID_MULTI_ASSET", "weighting": "RISK_PARITY", "emaLookback": 200, "volatilityMultiplier": 1.20 },
+    { "id": "AD016_HYB_RP_EMA200_VOL135", "track": "TRACK_C_HYBRID_MULTI_ASSET", "weighting": "RISK_PARITY", "emaLookback": 200, "volatilityMultiplier": 1.35 }
+  ]
+}

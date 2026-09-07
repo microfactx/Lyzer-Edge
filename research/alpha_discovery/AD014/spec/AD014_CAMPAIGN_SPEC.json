@@ -1,0 +1,74 @@
+{
+  "program": "AD014_PASSIVE_MACRO_CARRY",
+  "name": "Algorithmic Passive Income & Regime-Protected Macro Carry Engine",
+  "version": "1.0.0",
+  "createdDate": "2026-09-07T00:00:00.000Z",
+  "governance": {
+    "track": "LABORATORY_EXPERIMENTAL",
+    "authority": "Senior CTO & Executive Engineering Director",
+    "status": "DISCOVERY_EXECUTION",
+    "fdrMethod": "BENJAMINI_YEKUTIELI",
+    "totalHypotheses": 16,
+    "bootstrapIterations": 10000,
+    "blockDurationDays": 14,
+    "significanceLevel": 0.0500
+  },
+  "macroRates": {
+    "USD_FED_FUNDS": 0.0533,
+    "JPY_BOJ_RATE": 0.0010,
+    "EUR_ECB_RATE": 0.0365,
+    "GBP_BOE_RATE": 0.0500,
+    "SAFE_HAVEN_TBILL_RATE": 0.0500
+  },
+  "assetCarryProfiles": {
+    "USDJPY": {
+      "carryDirection": "LONG",
+      "annualGrossCarryRate": 0.0520,
+      "turnoverFrictionBps": 3.0
+    },
+    "EURUSD": {
+      "carryDirection": "SHORT",
+      "annualGrossCarryRate": 0.0168,
+      "turnoverFrictionBps": 3.0
+    },
+    "GBPUSD": {
+      "carryDirection": "SHORT",
+      "annualGrossCarryRate": 0.0033,
+      "turnoverFrictionBps": 3.0
+    },
+    "BTCUSDT": {
+      "carryDirection": "DELTA_NEUTRAL",
+      "annualGrossCarryRate": 0.0850,
+      "turnoverFrictionBps": 24.0
+    }
+  },
+  "gates": {
+    "gate1_minAnnualizedReturnPct": 6.00,
+    "gate2_minTotalReturnPct": 0.00,
+    "gate3_minSharpeRatio": 3.00,
+    "gate4_maxDrawdownPct": 4.00,
+    "gate5_maxBlockBootstrapPValue": 0.0500,
+    "gate5_maxBenjaminiYekutieliQ": 0.0500
+  },
+  "cells": [
+    { "id": "AD014_USDJPY_EMA100_VOL120", "asset": "USDJPY", "emaLookback": 100, "volRatioThreshold": 1.20 },
+    { "id": "AD014_USDJPY_EMA100_VOL135", "asset": "USDJPY", "emaLookback": 100, "volRatioThreshold": 1.35 },
+    { "id": "AD014_USDJPY_EMA200_VOL120", "asset": "USDJPY", "emaLookback": 200, "volRatioThreshold": 1.20 },
+    { "id": "AD014_USDJPY_EMA200_VOL135", "asset": "USDJPY", "emaLookback": 200, "volRatioThreshold": 1.35 },
+
+    { "id": "AD014_EURUSD_EMA100_VOL120", "asset": "EURUSD", "emaLookback": 100, "volRatioThreshold": 1.20 },
+    { "id": "AD014_EURUSD_EMA100_VOL135", "asset": "EURUSD", "emaLookback": 100, "volRatioThreshold": 1.35 },
+    { "id": "AD014_EURUSD_EMA200_VOL120", "asset": "EURUSD", "emaLookback": 200, "volRatioThreshold": 1.20 },
+    { "id": "AD014_EURUSD_EMA200_VOL135", "asset": "EURUSD", "emaLookback": 200, "volRatioThreshold": 1.35 },
+
+    { "id": "AD014_GBPUSD_EMA100_VOL120", "asset": "GBPUSD", "emaLookback": 100, "volRatioThreshold": 1.20 },
+    { "id": "AD014_GBPUSD_EMA100_VOL135", "asset": "GBPUSD", "emaLookback": 100, "volRatioThreshold": 1.35 },
+    { "id": "AD014_GBPUSD_EMA200_VOL120", "asset": "GBPUSD", "emaLookback": 200, "volRatioThreshold": 1.20 },
+    { "id": "AD014_GBPUSD_EMA200_VOL135", "asset": "GBPUSD", "emaLookback": 200, "volRatioThreshold": 1.35 },
+
+    { "id": "AD014_BTCUSDT_EMA100_VOL120", "asset": "BTCUSDT", "emaLookback": 100, "volRatioThreshold": 1.20 },
+    { "id": "AD014_BTCUSDT_EMA100_VOL135", "asset": "BTCUSDT", "emaLookback": 100, "volRatioThreshold": 1.35 },
+    { "id": "AD014_BTCUSDT_EMA200_VOL120", "asset": "BTCUSDT", "emaLookback": 200, "volRatioThreshold": 1.20 },
+    { "id": "AD014_BTCUSDT_EMA200_VOL135", "asset": "BTCUSDT", "emaLookback": 200, "volRatioThreshold": 1.35 }
+  ]
+}

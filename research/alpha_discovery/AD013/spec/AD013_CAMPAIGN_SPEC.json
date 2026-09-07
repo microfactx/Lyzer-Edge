@@ -1,0 +1,76 @@
+{
+  "program": "AD013_TRADFI_REGIME_ADAPTIVE",
+  "name": "High-Frequency TradFi Cross-Asset Regime-Adaptive Alpha Discovery Engine",
+  "version": "1.0.0",
+  "createdDate": "2026-09-07T00:00:00.000Z",
+  "governance": {
+    "track": "LABORATORY_EXPERIMENTAL",
+    "authority": "Senior CTO & Executive Engineering Director",
+    "status": "DISCOVERY_EXECUTION",
+    "fdrMethod": "BENJAMINI_YEKUTIELI",
+    "totalHypotheses": 28,
+    "bootstrapIterations": 10000,
+    "blockDurationDays": 14,
+    "significanceLevel": 0.0500
+  },
+  "constraints": {
+    "minimumWeeklyTrades": 2.0,
+    "discoveryWeeks": 58.0,
+    "minimumDiscoveryTrades": 116,
+    "maximumHoldingHours": 24,
+    "weekendFlatCutoffUtcHour": 20,
+    "weekendFlatDayOfWeek": 5
+  },
+  "costModel": {
+    "SPY": { "feeBps": 1.0, "slippageBps": 1.0, "totalFrictionBps": 2.0 },
+    "QQQ": { "feeBps": 1.0, "slippageBps": 1.0, "totalFrictionBps": 2.0 },
+    "GLD": { "feeBps": 1.5, "slippageBps": 1.5, "totalFrictionBps": 3.0 },
+    "EURUSD": { "feeBps": 2.0, "slippageBps": 3.0, "totalFrictionBps": 5.0 },
+    "GBPUSD": { "feeBps": 2.0, "slippageBps": 3.0, "totalFrictionBps": 5.0 },
+    "USDJPY": { "feeBps": 2.0, "slippageBps": 3.0, "totalFrictionBps": 5.0 },
+    "BTCUSDT": { "feeBps": 10.0, "slippageBps": 14.0, "totalFrictionBps": 24.0 }
+  },
+  "gates": {
+    "gate1_minTrades": 116,
+    "gate2_minExpectancyR": 0.150,
+    "gate3_minProfitFactor": 1.30,
+    "gate4_maxBlockBootstrapPValue": 0.0500,
+    "gate5_maxBenjaminiYekutieliQ": 0.0500
+  },
+  "cells": [
+    { "id": "AD013_SPY_REGIME_S1_RR15", "asset": "SPY", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 1.5 },
+    { "id": "AD013_SPY_REGIME_S1_RR20", "asset": "SPY", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 2.0 },
+    { "id": "AD013_SPY_REGIME_S2_RR15", "asset": "SPY", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 1.5 },
+    { "id": "AD013_SPY_REGIME_S2_RR20", "asset": "SPY", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 2.0 },
+
+    { "id": "AD013_QQQ_REGIME_S1_RR15", "asset": "QQQ", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 1.5 },
+    { "id": "AD013_QQQ_REGIME_S1_RR20", "asset": "QQQ", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 2.0 },
+    { "id": "AD013_QQQ_REGIME_S2_RR15", "asset": "QQQ", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 1.5 },
+    { "id": "AD013_QQQ_REGIME_S2_RR20", "asset": "QQQ", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 2.0 },
+
+    { "id": "AD013_GLD_REGIME_S1_RR15", "asset": "GLD", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 1.5 },
+    { "id": "AD013_GLD_REGIME_S1_RR20", "asset": "GLD", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 2.0 },
+    { "id": "AD013_GLD_REGIME_S2_RR15", "asset": "GLD", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 1.5 },
+    { "id": "AD013_GLD_REGIME_S2_RR20", "asset": "GLD", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 2.0 },
+
+    { "id": "AD013_EURUSD_REGIME_S1_RR15", "asset": "EURUSD", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 1.5 },
+    { "id": "AD013_EURUSD_REGIME_S1_RR20", "asset": "EURUSD", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 2.0 },
+    { "id": "AD013_EURUSD_REGIME_S2_RR15", "asset": "EURUSD", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 1.5 },
+    { "id": "AD013_EURUSD_REGIME_S2_RR20", "asset": "EURUSD", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 2.0 },
+
+    { "id": "AD013_GBPUSD_REGIME_S1_RR15", "asset": "GBPUSD", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 1.5 },
+    { "id": "AD013_GBPUSD_REGIME_S1_RR20", "asset": "GBPUSD", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 2.0 },
+    { "id": "AD013_GBPUSD_REGIME_S2_RR15", "asset": "GBPUSD", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 1.5 },
+    { "id": "AD013_GBPUSD_REGIME_S2_RR20", "asset": "GBPUSD", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 2.0 },
+
+    { "id": "AD013_USDJPY_REGIME_S1_RR15", "asset": "USDJPY", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 1.5 },
+    { "id": "AD013_USDJPY_REGIME_S1_RR20", "asset": "USDJPY", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 2.0 },
+    { "id": "AD013_USDJPY_REGIME_S2_RR15", "asset": "USDJPY", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 1.5 },
+    { "id": "AD013_USDJPY_REGIME_S2_RR20", "asset": "USDJPY", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 2.0 },
+
+    { "id": "AD013_BTCUSDT_REGIME_S1_RR15", "asset": "BTCUSDT", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 1.5 },
+    { "id": "AD013_BTCUSDT_REGIME_S1_RR20", "asset": "BTCUSDT", "regimeMode": "STRICT", "adxTrendThreshold": 22, "adxChopThreshold": 20, "bollingerZ": 2.0, "riskReward": 2.0 },
+    { "id": "AD013_BTCUSDT_REGIME_S2_RR15", "asset": "BTCUSDT", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 1.5 },
+    { "id": "AD013_BTCUSDT_REGIME_S2_RR20", "asset": "BTCUSDT", "regimeMode": "DEEP", "adxTrendThreshold": 25, "adxChopThreshold": 18, "bollingerZ": 2.5, "riskReward": 2.0 }
+  ]
+}

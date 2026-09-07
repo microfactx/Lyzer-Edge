@@ -1,0 +1,69 @@
+{
+  "program": "ALPHA_DISCOVERY_AD012",
+  "name": "Cross-Asset Trend Breakout & Volatility Expansion Engine",
+  "version": "1.0.0",
+  "createdAt": "2026-09-07T04:20:00.000Z",
+  "period": {
+    "label": "2023-11-21 -> 2024-12-31 (Strict Discovery Window)",
+    "startMs": 1700524800000,
+    "endMs": 1735689599999
+  },
+  "holdoutPeriod": {
+    "label": "2025-01-01 -> Present (Sealed Holdout)",
+    "startMs": 1735689600000
+  },
+  "targetAssets": [
+    "SPY",
+    "QQQ",
+    "EURUSD",
+    "GBPUSD",
+    "GLD",
+    "BTCUSDT"
+  ],
+  "friction": {
+    "SPY": { "feeBpsPerLeg": 1.0, "slippageBpsPerLeg": 1.0, "totalRoundtripBps": 4.0 },
+    "QQQ": { "feeBpsPerLeg": 1.0, "slippageBpsPerLeg": 1.0, "totalRoundtripBps": 4.0 },
+    "EURUSD": { "feeBpsPerLeg": 1.5, "slippageBpsPerLeg": 1.0, "totalRoundtripBps": 5.0 },
+    "GBPUSD": { "feeBpsPerLeg": 2.0, "slippageBpsPerLeg": 1.5, "totalRoundtripBps": 7.0 },
+    "GLD": { "feeBpsPerLeg": 1.5, "slippageBpsPerLeg": 1.5, "totalRoundtripBps": 6.0 },
+    "BTCUSDT": { "feeBpsPerLeg": 5.0, "slippageBpsPerLeg": 7.0, "totalRoundtripBps": 24.0 }
+  },
+  "parameters": {
+    "volatilityAtrPeriod": 14,
+    "volatilityExpansionRatio": 1.15,
+    "volatilityBaselinePeriod": 50,
+    "stopLossAtrMultiple": 2.0,
+    "maxHoldingBars": 48
+  },
+  "cells": [
+    { "id": "AD012_SPY_L20_RR20", "asset": "SPY", "macroLookback": 20, "riskReward": 2.0, "description": "SPY Trend Breakout (L=20 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_SPY_L20_RR30", "asset": "SPY", "macroLookback": 20, "riskReward": 3.0, "description": "SPY Trend Breakout (L=20 4H bars, R:R 1:3.0)" },
+    { "id": "AD012_SPY_L50_RR20", "asset": "SPY", "macroLookback": 50, "riskReward": 2.0, "description": "SPY Trend Breakout (L=50 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_SPY_L50_RR30", "asset": "SPY", "macroLookback": 50, "riskReward": 3.0, "description": "SPY Trend Breakout (L=50 4H bars, R:R 1:3.0)" },
+
+    { "id": "AD012_QQQ_L20_RR20", "asset": "QQQ", "macroLookback": 20, "riskReward": 2.0, "description": "QQQ Trend Breakout (L=20 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_QQQ_L20_RR30", "asset": "QQQ", "macroLookback": 20, "riskReward": 3.0, "description": "QQQ Trend Breakout (L=20 4H bars, R:R 1:3.0)" },
+    { "id": "AD012_QQQ_L50_RR20", "asset": "QQQ", "macroLookback": 50, "riskReward": 2.0, "description": "QQQ Trend Breakout (L=50 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_QQQ_L50_RR30", "asset": "QQQ", "macroLookback": 50, "riskReward": 3.0, "description": "QQQ Trend Breakout (L=50 4H bars, R:R 1:3.0)" },
+
+    { "id": "AD012_EURUSD_L20_RR20", "asset": "EURUSD", "macroLookback": 20, "riskReward": 2.0, "description": "EURUSD Trend Breakout (L=20 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_EURUSD_L20_RR30", "asset": "EURUSD", "macroLookback": 20, "riskReward": 3.0, "description": "EURUSD Trend Breakout (L=20 4H bars, R:R 1:3.0)" },
+    { "id": "AD012_EURUSD_L50_RR20", "asset": "EURUSD", "macroLookback": 50, "riskReward": 2.0, "description": "EURUSD Trend Breakout (L=50 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_EURUSD_L50_RR30", "asset": "EURUSD", "macroLookback": 50, "riskReward": 3.0, "description": "EURUSD Trend Breakout (L=50 4H bars, R:R 1:3.0)" },
+
+    { "id": "AD012_GBPUSD_L20_RR20", "asset": "GBPUSD", "macroLookback": 20, "riskReward": 2.0, "description": "GBPUSD Trend Breakout (L=20 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_GBPUSD_L20_RR30", "asset": "GBPUSD", "macroLookback": 20, "riskReward": 3.0, "description": "GBPUSD Trend Breakout (L=20 4H bars, R:R 1:3.0)" },
+    { "id": "AD012_GBPUSD_L50_RR20", "asset": "GBPUSD", "macroLookback": 50, "riskReward": 2.0, "description": "GBPUSD Trend Breakout (L=50 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_GBPUSD_L50_RR30", "asset": "GBPUSD", "macroLookback": 50, "riskReward": 3.0, "description": "GBPUSD Trend Breakout (L=50 4H bars, R:R 1:3.0)" },
+
+    { "id": "AD012_GLD_L20_RR20", "asset": "GLD", "macroLookback": 20, "riskReward": 2.0, "description": "GLD Trend Breakout (L=20 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_GLD_L20_RR30", "asset": "GLD", "macroLookback": 20, "riskReward": 3.0, "description": "GLD Trend Breakout (L=20 4H bars, R:R 1:3.0)" },
+    { "id": "AD012_GLD_L50_RR20", "asset": "GLD", "macroLookback": 50, "riskReward": 2.0, "description": "GLD Trend Breakout (L=50 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_GLD_L50_RR30", "asset": "GLD", "macroLookback": 50, "riskReward": 3.0, "description": "GLD Trend Breakout (L=50 4H bars, R:R 1:3.0)" },
+
+    { "id": "AD012_BTCUSDT_L20_RR20", "asset": "BTCUSDT", "macroLookback": 20, "riskReward": 2.0, "description": "BTCUSDT Trend Breakout (L=20 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_BTCUSDT_L20_RR30", "asset": "BTCUSDT", "macroLookback": 20, "riskReward": 3.0, "description": "BTCUSDT Trend Breakout (L=20 4H bars, R:R 1:3.0)" },
+    { "id": "AD012_BTCUSDT_L50_RR20", "asset": "BTCUSDT", "macroLookback": 50, "riskReward": 2.0, "description": "BTCUSDT Trend Breakout (L=50 4H bars, R:R 1:2.0)" },
+    { "id": "AD012_BTCUSDT_L50_RR30", "asset": "BTCUSDT", "macroLookback": 50, "riskReward": 3.0, "description": "BTCUSDT Trend Breakout (L=50 4H bars, R:R 1:3.0)" }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "programId": "AD016",
+  "generatedAt": "2026-09-07T08:08:38.976Z",
+  "discoveryWindow": {
+    "start": "2023-11-21T00:00:00.000Z",
+    "end": "2024-12-31T23:59:59.999Z",
+    "durationWeeks": 58
+  },
+  "holdoutWindow": {
+    "start": "2025-01-01T00:00:00.000Z",
+    "status": "SEALED_AND_RESTRICTED"
+  },
+  "pairs": {
+    "USDJPY": {
+      "discoveryFile": "USDJPY_1h_discovery.json",
+      "discoveryCandles": 6846,
+      "discoverySha256": "2e2dc88ac1e2f608d3780396be40e8ba777318512beb6622b941f5639a99379c",
+      "holdoutCandles": 10285,
+      "holdoutSha256": "21606c5b425b082e50c47f19b0a14f4ec38371503dbd06b8a7ae2b09e5c149e0"
+    },
+    "GBPJPY": {
+      "discoveryFile": "GBPJPY_1h_discovery.json",
+      "discoveryCandles": 6884,
+      "discoverySha256": "33b9ba2e3ebd459d3609c9c2d1ea8860c5e71d6adc4352929c0baa31eebb650b",
+      "holdoutCandles": 10350,
+      "holdoutSha256": "b428af5adffcc6aee025bbcbce3e86a1f6dafc31ce5fb79878f7e48747d92026"
+    },
+    "AUDJPY": {
+      "discoveryFile": "AUDJPY_1h_discovery.json",
+      "discoveryCandles": 6886,
+      "discoverySha256": "c38fd98d9dcc384874ed8c98521ca03fd658c5ae9058d29df9d819948a2eea82",
+      "holdoutCandles": 10354,
+      "holdoutSha256": "25ac9d1a91689aec784f0e2d821ae5828797555c9e3271f62730fb4d2574248e"
+    },
+    "CADJPY": {
+      "discoveryFile": "CADJPY_1h_discovery.json",
+      "discoveryCandles": 6887,
+      "discoverySha256": "36e1fe415934dfd9e804d13d18f45cab08b6cdcc663bb828f0ac5ad619ac4623",
+      "holdoutCandles": 10353,
+      "holdoutSha256": "5e40273f8b1267fdf43c7064c17cdbcb184d74eedcab7c5086b39c5b3bd4c573"
+    },
+    "USDCHF": {
+      "discoveryFile": "USDCHF_1h_discovery.json",
+      "discoveryCandles": 6869,
+      "discoverySha256": "8caf15f3702c04508adfba98cb9c15bce6952a6cf99dcff4f694ae96d03bd0e4",
+      "holdoutCandles": 10297,
+      "holdoutSha256": "b69baebde16e0cb84c65a98c177a87cceab297d2e63858bf90685ad3c21a3166"
+    },
+    "GBPCHF": {
+      "discoveryFile": "GBPCHF_1h_discovery.json",
+      "discoveryCandles": 6884,
+      "discoverySha256": "e1603418b1d13b588bc780098b0fd5d4ad31b53b5c3a4cd7891ce75384c397d2",
+      "holdoutCandles": 10351,
+      "holdoutSha256": "16481b3edd151cf068ec9996677ad3731f0acccea896a783813bef5f4e5feebf"
+    },
+    "AUDCHF": {
+      "discoveryFile": "AUDCHF_1h_discovery.json",
+      "discoveryCandles": 6899,
+      "discoverySha256": "65d806c750b49fafc76350edc2f1fecd7ac82e98ee811fafdba0681210c83fd0",
+      "holdoutCandles": 10386,
+      "holdoutSha256": "8c94794862a20a086d9aeebe1d30c30899427b1a904978acab11557c591a3be0"
+    },
+    "CADCHF": {
+      "discoveryFile": "CADCHF_1h_discovery.json",
+      "discoveryCandles": 6888,
+      "discoverySha256": "525146ed2f7e11fc2e30d2cbd67080a5df87b01c43377572be0815a54c03022c",
+      "holdoutCandles": 10358,
+      "holdoutSha256": "398487230dffb65f5a1faec7acf20b60614fb7c9d45bc5059962db933e36f585"
+    },
+    "USDMXN": {
+      "discoveryFile": "USDMXN_1h_discovery.json",
+      "discoveryCandles": 6904,
+      "discoverySha256": "27ae47a533b2453acb0b338384a87569612e3e9f1878ef6b3be2739cb120d68f",
+      "holdoutCandles": 10351,
+      "holdoutSha256": "b33ce5fe0e99dbe05917e622fb4a0a0e819586c0d9af733d660a80c2e380cacc"
+    },
+    "USDBRL": {
+      "discoveryFile": "USDBRL_1h_discovery.json",
+      "discoveryCandles": 4468,
+      "discoverySha256": "36d737672274f1d0938999f0722303dcefa40c6a13633d61a89ae6e85167e506",
+      "holdoutCandles": 7273,
+      "holdoutSha256": "1df67079a43b43c9c291b5202e7be55a573716fcfd39324bf1d72ae7311b188c"
+    },
+    "USDZAR": {
+      "discoveryFile": "USDZAR_1h_discovery.json",
+      "discoveryCandles": 6925,
+      "discoverySha256": "24eb2e93f531918804cbe1901875d1b79ed6fc6c621331860488b9139eb2f342",
+      "holdoutCandles": 10385,
+      "holdoutSha256": "c9c7025c58cd74d249312dd50f8e0fcb3980fee87a9623d34db6239969403bc6"
+    },
+    "USDPLN": {
+      "discoveryFile": "USDPLN_1h_discovery.json",
+      "discoveryCandles": 6912,
+      "discoverySha256": "9cff2c0db658800e7fdf72b118406a19019ade95dca0f6b0f8c04556e702b857",
+      "holdoutCandles": 10392,
+      "holdoutSha256": "124cdc5328a9648d0751158bda530c0e7278fbef21bf76a35d7824870f9f4230"
+    }
+  }
+}
