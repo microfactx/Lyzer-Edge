@@ -1,0 +1,65 @@
+{
+  "hypothesisId": "H019",
+  "name": "Diversified Multi-Currency Carry Basket Engine (TradFi Passive Income)",
+  "cellOrigin": "AD015_EW_UNIFIED_EMA200_VOL135",
+  "verdict": "CONFIRMATORY_REJECTION",
+  "passedAllGates": false,
+  "evaluationWindow": {
+    "totalBars": 10273,
+    "totalHours": 10071,
+    "totalDays": 419.6,
+    "yearsEvaluated": 1.15,
+    "startDate": "2025-01-01T18:00:00.000Z",
+    "endDate": "2026-09-07T07:00:00.000Z"
+  },
+  "metrics": {
+    "hypothesisId": "H019",
+    "totalHours": 10071,
+    "totalDays": 419.6,
+    "yearsEvaluated": 1.15,
+    "totalNetReturnPct": -2.24,
+    "annualizedReturnPct": -1.95,
+    "maxDrawdownPct": 7.1,
+    "annualizedSharpe": -0.28,
+    "activeHoursRatioPct": 58.1,
+    "tBillsHoursRatioPct": 41.9,
+    "turnoverTransitions": 162,
+    "totalTurnoverFrictionPct": 4.86,
+    "finalNav": 0.9776
+  },
+  "bootstrap": {
+    "nBlocks": 30,
+    "pBlock": 1,
+    "meanBlockReturnPct": -0.069,
+    "profitFactor": 0.86,
+    "ci95Lower": -0.069,
+    "ci95Upper": -0.069
+  },
+  "gates": {
+    "gate1_annualizedReturn": {
+      "passed": false,
+      "actual": -1.95,
+      "threshold": ">= 6.00"
+    },
+    "gate2_totalReturn": {
+      "passed": false,
+      "actual": -2.24,
+      "threshold": "> 0.00"
+    },
+    "gate3_sharpeRatio": {
+      "passed": false,
+      "actual": -0.28,
+      "threshold": ">= 1.20"
+    },
+    "gate4_maxDrawdown": {
+      "passed": false,
+      "actual": 7.1,
+      "threshold": "<= 4.00"
+    },
+    "gate5_statisticalSignificance": {
+      "passed": false,
+      "actual": 1,
+      "threshold": "< 0.0500"
+    }
+  }
+}

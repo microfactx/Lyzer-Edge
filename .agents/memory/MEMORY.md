@@ -3,10 +3,15 @@
 ## ⚡ Active State (LEIA PRIMEIRO)
 - [state] Estado atual do projeto, testes e fila de tarefas imediatas → ../../STATE.md
 
+## 👤 User & Leadership
+- [user] Jonatan Ciamarro: Fundador, retail-to-quant, Capital Stack 70/30, CDI hurdle rate → user-preferences.md
+
 ## 📐 Architecture & Conventions
 - [conventions] Padrões de código, diretórios e convenções de branch → project-conventions.md
 - [decisions] Decisões arquiteturais fundamentais e axiomas Lyzer Labs → tech-decisions.md
 - [system-map] Topologia de nós e fluxo de execução gRPC/Node → system_map.md
+- [adr-042] Capital Stack, Anti-Fragile Flywheel & Opportunity Cost Engine (OCE) → adr_capital_stack_and_opportunity_cost_engine.md
+- [capital-engine] Consórcio Imobiliário, Alavancagem Patrimonial & DSCR Modeling → capital_engine_consorcio_real_estate_framework.md
 
 ## 📚 Directives & Knowledge
 - [directive] LYZER EDGE — Cognitive Operating Directive v1.0 → cognitive_directive.md

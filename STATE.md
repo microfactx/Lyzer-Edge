@@ -1,8 +1,8 @@
 # 🏛️ LYZER EDGE — RESEARCH & OPERATIONAL STATE DASHBOARD
 
-**Data do Registro:** 2026-09-07T08:45:00Z  
+**Data do Registro:** 2026-09-09T05:27:00Z  
 **Autoridade:** Senior CTO & Executive Engineering Director  
-**Status do Repositório:** 🟢 **FIRST PRODUCTION ALPHA HOMOLOGATED (H017 SOAK) + TRADFI PASSIVE CARRIED**  
+**Status do Repositório:** 🟢 **FIRST PRODUCTION ALPHA HOMOLOGATED (H017 SOAK) + CAPITAL STACK (ADR-042) & CE-B001 AUDITED**  
 **Dataset Base:** 32.016 Hourly Candles BTCUSDT + Painel Multiativo Sincronizado Crypto & TradFi (SPY, QQQ, GLD, EUR, GBP, JPY, CHF, AUD, CAD, MXN, BRL, ZAR, PLN)  
 **Git Remote:** `https://github.com/microfactx/Lyzer-Edge.git` (`origin/main` @ commit `5c2514d`)  
 **Motor V8 SHA-256:** `fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1` (**100% INTACTO**)  
@@ -23,6 +23,7 @@
 ║ ALPHA FACTORY PIPELINE     🟢 OPERATIONAL v1.0 (Sub-3s benchmark, 14d Bootstrap║
 ║ RESEARCH PIPELINE STATUS   🟢 STAGE 3 ALPHA CONFIRMED (H017 Approved for Prod) ║
 ║ CONFIRMED PRODUCTION ALPHA 🟢 H017 (Productive Collateral Carry 2.0x, Delta=0)║
+║ CAPITAL STACK & FLYWHEEL   🟢 HOMOLOGATED (ADR-042 Core 70/30, CDI Hurdle Rate)║
 ║ ENVIRONMENT                🟡 BINANCE TESTNET (ARL_MODE=TESTNET)              ║
 ║ AUTHORIZED CAPACITY        🟢 $500 USD (Valid Ed25519 Token Active)           ║
 ║ REAL MONEY (LIVE CAPITAL)  🔴 ZERO AUTHORIZED ($0)                            ║
@@ -38,6 +39,8 @@ PRODUCTION & RESEARCH DUAL-TRACK STATUS
 OPERATIONAL SOAK RESILIENCE         🟢 PASSED & CERTIFIED
 FAIL-CLOSED BEHAVIOR                🟢 PASSED & CERTIFIED
 ALPHA FACTORY INFRASTRUCTURE        🟢 OPERATIONAL & BENCHMARKED (v1.0)
+CAPITAL STACK FLYWHEEL (ADR-042)    🟢 HOMOLOGATED (Core 70% Reinvest / 30% Lyzer Risk Budget, CDI Hurdle)
+REAL ESTATE CONSÓRCIO (CE-B001)     🔴 COMPREHENSIVELY FALSIFIED (Negative Carry, NAV Destruction, R$ 0 Alpha Flow)
 DIRECTIONAL PRICE PATTERNS (H001-11)🔴 FALSIFIED / NEGATIVE EDGE
 PERPETUAL SHORT SQUEEZE (H012)      🔴 CONFIRMATORY FAILURE (OOS Bleed)
 CROSS-SECTIONAL SPREAD (AD005)      🔴 FALSIFIED (Friction Floor)
@@ -58,6 +61,7 @@ TRADFI REGIME ADAPTIVE (AD013)      🔴 FALSIFIED (0/28 BY Pass; FX Freq OK but
 PASSIVE MACRO CARRY (AD014)         🟡 BREAKTHROUGH ISOLATED (USDJPY +10.86% a.a., p=0.0001, DD=4.7%)
 MULTI-CURRENCY BASKET (AD015)       🟢 BREAKTHROUGH ISOLATED (4-JPY +9.07% a.a., MaxDD 2.96%, p=0.0001)
 DUAL-FUNDING & EM CARRY (AD016)     🟡 DUAL G10 ISOLATED (+6.96% a.a., DD 2.08%, Sharpe 1.61); EM FALSIFIED
+DIVERSIFIED JPY CARRY (H019)        🔴 CONFIRMATORY FAILURE (Whipsaw Drag -1.95%, DD 7.1%)
 SHADOW SOAK ENDURANCE (7D SOAK)     🟢 CERTIFIED (Zero Incidents, +0.19% 7d Net)
 CANARY CAPITAL TRANSITION (PHASE 2) 🟡 AUTHORIZED FOR $500 CANARY (Ed25519 Token)
 REAL-CAPITAL READINESS              🟡 CANARY PHASE READY ($500 USD Authorized)
@@ -148,6 +152,13 @@ AD015              Diversified Multi-Currency Carry       4-JPY Carry Basket (US
 AD016              Dual-Funding G10 & High-Yield          Dual-Funding G10 isolou MaxDD 2.08%      🟡 DUAL G10 ISOLADO
                     Emerging Market Carry (2023–2024)      com Sharpe 1.61 (+6.96% a.a.);           (AD016_REPORT.md)
                                                            Emergentes (MXN/BRL) FALSIFICADOS (-8%).
+H019               Diversified Multi-Currency Carry       10.071h avaliadas (419,6d). AnnYield     🔴 FALHA CONFIRMATÓRIA
+                    Basket Engine (Holdout 2025–2026)      -1.95% a.a., Net -2.24%, MaxDD 7.10%,    (H019_VERDICT.md)
+                                                            Sharpe -0.28, p=1.0000. 162 giros (fee 4.86%).
+ADR-042            Capital Stack & Opportunity Cost       Arquitetura de Flywheel 70/30, CDI       🟢 HOMOLOGADO
+                   Engine (OCE) - Hurdle Soberano BRL     Hurdle Rate, Imunidade à Ruína (P=0.00%) (ADR-042)
+CE-B001            Capital Engine: Consórcio Imobiliário  Falsificação mês a mês (180 meses): NAV  🔴 FALSIFICADO /
+                   vs. Benchmark Passivo Renda Fixa BRL   lags CDB em -R$ 166k; R$ 0 fluxo Lyzer.  ARQUIVADO (CE_B001)
 ========================================================================================================================
 ```
 
@@ -185,6 +196,9 @@ AD016              Dual-Funding G10 & High-Yield          Dual-Funding G10 isolo
 │  • AD014 (Passive Macro Carry)     → 🟡 BREAKTHROUGH ISOLATED (USDJPY +10.86% a.a., p=0.0001)   │
 │  • AD015 (Multi-Currency Carry)    → 🟢 BREAKTHROUGH ISOLATED (4-JPY +9.07% a.a., MaxDD 2.96%)  │
 │  • AD016 (Dual-Funding & EM Carry) → 🟡 DUAL G10 ISOLATED (+6.96% a.a., DD 2.08%); EM FALSIFIED  │
+│  • H019 (Basket Carry Holdout)     → 🔴 REJECT CONFIRMATÓRIO (-1.95% a.a. vs meta >= +6.0% a.a.) │
+│  • ADR-042 (Capital Stack & OCE)   → 🟢 HOMOLOGADO (Cofre 40% / Yield 60%, 70/30 Flywheel, P=0) │
+│  • CE-B001 (Consórcio vs BRL RF)   → 🔴 REJECT (Falsificado 180m; negative carry, R$ 0 ao Lyzer)│
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -243,31 +257,44 @@ A hipótese **`H017` (Productive Collateral Basis Carry)** quebrou formalmente t
 10. [x] **Programa de Descoberta AD014**: Renda Passiva Macro Carry USDJPY (+10.86% a.a. líquido, MaxDD 4.74%, p=0.0001);
 11. [x] **Programa de Descoberta AD015**: Cesta Multi-Moeda Carry 4-JPY (+9.07% a.a. líquido, MaxDD 2.96%, p=0.0001, q_BY=0.0005) — Campeão TradFi;
 12. [x] **Programa de Descoberta AD016**: Dual-Funding G10 (JPY+CHF, MaxDD 2.08%, Sharpe 1.61) e Falsificação de Emergentes (-8% a.a., DD 10.37%);
-13. [ ] **Elaboração de Carta Confirmatória H019**: Validação estatística do modelo AD015 Basket Carry no Holdout 2025–2026;
-14. [ ] **Programa de Descoberta AD017**: Renda Fixa e Curva de Juros dos EUA (Treasury duration carry).
+13. [x] **Elaboração e Execução Confirmatória de H019**: Validação estatística do modelo AD015 Basket Carry no Holdout 2025–2026 (Falsificado: -1.95% a.a., Net -2.24%, MaxDD 7.10%, Sharpe -0.28, p=1.0000; 162 transições geraram 4.86% em fee drag);
+14. [x] **ADR-042: Capital Stack, Flywheel Anti-Frágil & Opportunity Cost Engine (OCE)**: Arquitetura de alocação Core (70% reinvest / 30% risk budget) com CDI hurdle rate e P(ruína)=0%;
+15. [x] **BATCH CE-B001: Auditoria Ex-Ante de Consórcio Imobiliário vs. Renda Fixa BRL**: Falsificação matemática mês a mês (180 meses) de alavancagem por consórcio (arrasto de NAV, insolvência e R$ 0 ao Lyzer);
+16. [ ] **Integração do `OpportunityCostEngine` (OCE) no Pipeline de Produção**: Implementação do Portão Zero no `truthKernel.js` e `streamEngine.js` para veto dinâmico por hurdle rate;
+17. [ ] **Programa de Descoberta AD017**: Renda Fixa e Curva de Juros dos EUA (Treasury duration carry).
 
 ---
 
 ## 6. MAPA DE DOCUMENTOS E ARQUIVOS ESSENCIAIS
 
-- **Worker de Live Soak Wall-Clock H017:** [`packages/lyzer-shared/src/execution/h017_live_soak_worker.js`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/packages/lyzer-shared/src/execution/h017_live_soak_worker.js)
-- **Suíte de Testes do Worker Live:** [`tests/verification/verify_h017_live_soak_worker.test.js`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/tests/verification/verify_h017_live_soak_worker.test.js)
-- **Script Standalone CLI de Live Soak:** [`scripts/run_h017_live_wallclock_soak.js`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/scripts/run_h017_live_wallclock_soak.js)
-- **Runner de Shadow Soak H017:** [`packages/lyzer-shared/src/execution/h017_shadow_soak_runner.js`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/packages/lyzer-shared/src/execution/h017_shadow_soak_runner.js)
-- **Suíte de Testes de Shadow Soak:** [`tests/verification/verify_h017_shadow_soak.test.js`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/tests/verification/verify_h017_shadow_soak.test.js)
-- **Adaptador de Margem Unificada H017:** [`packages/lyzer-shared/src/execution/h017_unified_margin_adapter.js`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/packages/lyzer-shared/src/execution/h017_unified_margin_adapter.js)
-- **Módulo de Execução de Produção H017:** [`packages/lyzer-shared/src/execution/h017_production_carry_module.js`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/packages/lyzer-shared/src/execution/h017_production_carry_module.js)
-- **Ata do Comitê de Risco (Dimensionamento):** [`knowledge/operations/H017_RISK_COMMITTEE_MINUTES.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/knowledge/operations/H017_RISK_COMMITTEE_MINUTES.md)
-- **Suíte de Testes de Produção:** [`tests/verification/verify_h017_production_engine.test.js`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/tests/verification/verify_h017_production_engine.test.js)
-- **Laudo Confirmatório de H017 (Produção Homologada):** [`research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_VERDICT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_VERDICT.md)
-- **Resultados Detalhados H017 (JSON):** [`research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_RESULTS.json`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_RESULTS.json)
-- **Carta Constitucional de H017:** [`research/alpha_confirmation/H017_PRODUCTIVE_CARRY/charter/H017_CONFIRMATORY_CHARTER.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_confirmation/H017_PRODUCTIVE_CARRY/charter/H017_CONFIRMATORY_CHARTER.md)
-- **Relatório de Descoberta AD010:** [`research/alpha_discovery/AD010/discovery/AD010_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_discovery/AD010/discovery/AD010_DISCOVERY_REPORT.md)
-- **Relatório de Descoberta AD014:** [`research/alpha_discovery/AD014/discovery/AD014_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_discovery/AD014/discovery/AD014_DISCOVERY_REPORT.md)
-- **Relatório de Descoberta AD015 (Campeão TradFi):** [`research/alpha_discovery/AD015/discovery/AD015_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_discovery/AD015/discovery/AD015_DISCOVERY_REPORT.md)
-- **Relatório de Descoberta AD016 (Dual-Funding G10):** [`research/alpha_discovery/AD016/discovery/AD016_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/alpha_discovery/AD016/discovery/AD016_DISCOVERY_REPORT.md)
-- **Handoff Report Consolidado:** [`.agents/handoff.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/.agents/handoff.md)
-- **Memória Persistente de Renda Passiva TradFi:** [`.agents/memory/alpha-research-tradfi-passive-income.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/.agents/memory/alpha-research-tradfi-passive-income.md)
-- **Master Hypothesis Ledger (MD):** [`research/HYPOTHESIS_LEDGER.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/HYPOTHESIS_LEDGER.md)
-- **Master Hypothesis Ledger (JSON):** [`research/HYPOTHESIS_LEDGER.json`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/research/HYPOTHESIS_LEDGER.json)
+- **ADR-042 (Capital Stack & Opportunity Cost Engine):** [`.agents/memory/adr_capital_stack_and_opportunity_cost_engine.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/.agents/memory/adr_capital_stack_and_opportunity_cost_engine.md)
+- **Pré-Registro Constitucional CE-B001:** [`research/capital_engine/CE_B001_PRE_REGISTRATION.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/capital_engine/CE_B001_PRE_REGISTRATION.md)
+- **Laudo Forense de Falsificação CE-B001:** [`research/capital_engine/CE_B001_AUDIT_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/capital_engine/CE_B001_AUDIT_REPORT.md)
+- **Motor de Simulação Mês a Mês CE-B001:** [`research/capital_engine/simulate_ce_b001.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/capital_engine/simulate_ce_b001.js)
+- **Framework de Consórcio e DSCR:** [`.agents/memory/capital_engine_consorcio_real_estate_framework.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/.agents/memory/capital_engine_consorcio_real_estate_framework.md)
+- **Perfil de Liderança e Filosofia (Jonatan Ciamarro):** [`.agents/memory/user-preferences.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/.agents/memory/user-preferences.md)
+- **Laudo Confirmatório de H019 (Falsificação Holdout):** [`research/alpha_confirmation/H019_BASKET_CARRY/results/H019_CONFIRMATORY_VERDICT.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_confirmation/H019_BASKET_CARRY/results/H019_CONFIRMATORY_VERDICT.md)
+- **Resultados Detalhados H019 (JSON):** [`research/alpha_confirmation/H019_BASKET_CARRY/results/H019_CONFIRMATORY_RESULTS.json`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_confirmation/H019_BASKET_CARRY/results/H019_CONFIRMATORY_RESULTS.json)
+- **Carta Constitucional de H019:** [`research/alpha_confirmation/H019_BASKET_CARRY/charter/H019_CONFIRMATORY_CHARTER.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_confirmation/H019_BASKET_CARRY/charter/H019_CONFIRMATORY_CHARTER.md)
+- **Motor Confirmatório H019:** [`research/alpha_confirmation/H019_BASKET_CARRY/core/h019_confirmatory_engine.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_confirmation/H019_BASKET_CARRY/core/h019_confirmatory_engine.js)
+- **Worker de Live Soak Wall-Clock H017:** [`packages/lyzer-shared/src/execution/h017_live_soak_worker.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/packages/lyzer-shared/src/execution/h017_live_soak_worker.js)
+- **Suíte de Testes do Worker Live:** [`tests/verification/verify_h017_live_soak_worker.test.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/tests/verification/verify_h017_live_soak_worker.test.js)
+- **Script Standalone CLI de Live Soak:** [`scripts/run_h017_live_wallclock_soak.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/scripts/run_h017_live_wallclock_soak.js)
+- **Runner de Shadow Soak H017:** [`packages/lyzer-shared/src/execution/h017_shadow_soak_runner.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/packages/lyzer-shared/src/execution/h017_shadow_soak_runner.js)
+- **Suíte de Testes de Shadow Soak:** [`tests/verification/verify_h017_shadow_soak.test.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/tests/verification/verify_h017_shadow_soak.test.js)
+- **Adaptador de Margem Unificada H017:** [`packages/lyzer-shared/src/execution/h017_unified_margin_adapter.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/packages/lyzer-shared/src/execution/h017_unified_margin_adapter.js)
+- **Módulo de Execução de Produção H017:** [`packages/lyzer-shared/src/execution/h017_production_carry_module.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/packages/lyzer-shared/src/execution/h017_production_carry_module.js)
+- **Ata do Comitê de Risco (Dimensionamento):** [`knowledge/operations/H017_RISK_COMMITTEE_MINUTES.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/knowledge/operations/H017_RISK_COMMITTEE_MINUTES.md)
+- **Suíte de Testes de Produção:** [`tests/verification/verify_h017_production_engine.test.js`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/tests/verification/verify_h017_production_engine.test.js)
+- **Laudo Confirmatório de H017 (Produção Homologada):** [`research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_VERDICT.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_VERDICT.md)
+- **Resultados Detalhados H017 (JSON):** [`research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_RESULTS.json`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_confirmation/H017_PRODUCTIVE_CARRY/results/H017_CONFIRMATORY_RESULTS.json)
+- **Carta Constitucional de H017:** [`research/alpha_confirmation/H017_PRODUCTIVE_CARRY/charter/H017_CONFIRMATORY_CHARTER.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_confirmation/H017_PRODUCTIVE_CARRY/charter/H017_CONFIRMATORY_CHARTER.md)
+- **Relatório de Descoberta AD010:** [`research/alpha_discovery/AD010/discovery/AD010_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_discovery/AD010/discovery/AD010_DISCOVERY_REPORT.md)
+- **Relatório de Descoberta AD014:** [`research/alpha_discovery/AD014/discovery/AD014_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_discovery/AD014/discovery/AD014_DISCOVERY_REPORT.md)
+- **Relatório de Descoberta AD015 (Campeão TradFi):** [`research/alpha_discovery/AD015/discovery/AD015_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_discovery/AD015/discovery/AD015_DISCOVERY_REPORT.md)
+- **Relatório de Descoberta AD016 (Dual-Funding G10):** [`research/alpha_discovery/AD016/discovery/AD016_DISCOVERY_REPORT.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/alpha_discovery/AD016/discovery/AD016_DISCOVERY_REPORT.md)
+- **Handoff Report Consolidado:** [`.agents/handoff.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/.agents/handoff.md)
+- **Memória Persistente de Renda Passiva TradFi:** [`.agents/memory/alpha-research-tradfi-passive-income.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/.agents/memory/alpha-research-tradfi-passive-income.md)
+- **Master Hypothesis Ledger (MD):** [`research/HYPOTHESIS_LEDGER.md`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/HYPOTHESIS_LEDGER.md)
+- **Master Hypothesis Ledger (JSON):** [`research/HYPOTHESIS_LEDGER.json`](file:///c:/Users/WDAGUtilityAccount/.gemini/antigravity/scratch/Lyzer-Edge/research/HYPOTHESIS_LEDGER.json)
 - **Constituição da Engenharia:** [`.agents/rules/MASTER_PROMPT.md`](file:///c:/Users/WDAGUtilityAccount/Documents/Nova%20pasta/Lyzer-Edge/.agents/rules/MASTER_PROMPT.md)

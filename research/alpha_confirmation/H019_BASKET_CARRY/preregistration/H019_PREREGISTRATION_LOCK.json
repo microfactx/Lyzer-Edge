@@ -1,0 +1,11 @@
+{
+  "hypothesisId": "H019",
+  "lockTimestamp": "2026-09-08T22:20:00.000Z",
+  "status": "LOCKED_BEFORE_HOLDOUT_EVALUATION",
+  "files": {
+    "charter": "3202ab7d524eb0b2a626c0d7be00b0368362b1ba37ee5b7fd207a15b3b6f964a",
+    "frozenSpec": "174264eb2bef0f0da02ea0e60505bdb0171ec437cb7681b801e279dd3de13ee2",
+    "engine": "a5d6aa71a270ae5751f1174b07d18802837b92b6e90d3988dc3e46726e8cdd46",
+    "v8Invariant": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1"
+  }
+}

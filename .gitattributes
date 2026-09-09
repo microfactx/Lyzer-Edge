@@ -1,0 +1,6 @@
+# Ensure LF line endings for JavaScript files and specifically the frozen V8 engine invariant
+* text=auto
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+packages/lyzer-shared/src/providers/institutional_quant_signal_engine.js text eol=lf

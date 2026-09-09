@@ -578,7 +578,36 @@
     },
     "multiplicityMethod": "Benjamini-Yekutieli (BY, 2001), M=24",
     "diagnosticNote": "0/24 cells met all 5 gates simultaneously under strict zero-lookahead. Scientific findings: 1) Trilha A (Dual-Funding G10) proved robust: all 8 cells delivered positive net returns (+4.91% to +6.96% a.a.) and superior risk efficiency (Sharpe up to 1.61, MaxDD contained between 2.08% and 2.82%), proving CHF+JPY dual-funding eliminates single-currency shocks. Gate 1 failed narrowly (+6.96% vs +7.50% a.a.). 2) Trilha B (Emerging Markets Carry) was decisively FALSIFIED: massive currency devaluations in MXN and BRL (-20% to -26% in 2024) completely overwhelmed the positive interest carry, generating deep negative returns (-3.49% to -9.50% a.a., MaxDD up to 10.37%). EM carry confirmed as an epistemic value trap. 3) Trilha C (Hybrid) suffered contamination from EM losses. Holdout 2025–2026 remains 100% sealed."
+  },
+  {
+    "id": "H019",
+    "date": "2026-09-08T22:20:00.000Z",
+    "parentBatch": "AD015_MULTI_CURRENCY_CARRY_BASKET",
+    "hypothesis": "Diversified Multi-Currency Carry Basket Engine (4-JPY + T-Bills, Virgin Temporal Holdout 2025-2026)",
+    "economicRationale": "Multi-currency carry basket against low-yielding JPY (USD, GBP, AUD, CAD) combined with unified basket volatility and trend circuit breaker harvests positive interest rate spreads while parking idle capital into 5.0% T-Bills during macro unwind regimes.",
+    "status": "ARCHIVED",
+    "result": "CONFIRMATORY_REJECTION",
+    "class": "ALGORITHMIC PASSIVE INCOME & MULTI-CURRENCY CARRY BASKET",
+    "evaluatedHoldoutHours": 10071,
+    "evaluatedHoldoutDays": 419.6,
+    "metrics": {
+      "annualizedReturnPct": -1.95,
+      "totalNetReturnPct": -2.24,
+      "annualizedSharpe": -0.28,
+      "maxDrawdownPct": 7.1,
+      "pBlock": 1.0,
+      "turnoverTransitions": 162,
+      "turnoverFeePct": 4.86,
+      "activeHoursRatioPct": 58.1,
+      "tBillsHoursRatioPct": 41.9
+    },
+    "constitutionalGates": {
+      "gate1_annualizedReturn": "FAIL (actual -1.95% vs >= +6.00% a.a.)",
+      "gate2_totalReturn": "FAIL (actual -2.24% vs > 0.00%)",
+      "gate3_sharpeRatio": "FAIL (actual -0.28 vs >= 1.20)",
+      "gate4_maxDrawdown": "FAIL (actual 7.10% vs <= 4.00%)",
+      "gate5_statisticalSignificance": "FAIL (actual p=1.0000 vs < 0.0500)"
+    },
+    "diagnosticNote": "Failed all 5 constitutional gates on Virgin Temporal Holdout (2025-2026). During 2025-2026, severe whipsaw price action around the 200h EMA triggered 162 regime transitions between the basket and T-Bills, creating an accumulated turnover fee drag of 4.86% that, along with adverse currency drift, obliterated the nominal carry yield. In accordance with the Engineering Constitution ('O Tribunal Nunca Aprende'), production promotion is permanently blocked and the hypothesis is archived."
   }
 ]
-
-

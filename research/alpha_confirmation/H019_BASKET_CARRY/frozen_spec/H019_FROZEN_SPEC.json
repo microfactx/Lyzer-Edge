@@ -1,0 +1,57 @@
+{
+  "hypothesisId": "H019",
+  "name": "Diversified Multi-Currency Carry Basket Engine (TradFi Passive Income)",
+  "version": "1.0.0",
+  "programOrigin": "AD015",
+  "cellOrigin": "AD015_EW_UNIFIED_EMA200_VOL135",
+  "status": "FROZEN_AWAITING_UNLOCK",
+  "dateFrozenUTC": "2026-09-08T22:20:00.000Z",
+  "engineV8SHA256": "fc19e807255b3ecfb8351e82d7dc9d244c1e511d9aa007ac8b67b12d584b4db1",
+  "pairs": {
+    "USDJPY": { "annualCarryRate": 0.0520, "turnoverFrictionBps": 3.0 },
+    "GBPJPY": { "annualCarryRate": 0.0490, "turnoverFrictionBps": 3.0 },
+    "AUDJPY": { "annualCarryRate": 0.0425, "turnoverFrictionBps": 3.0 },
+    "CADJPY": { "annualCarryRate": 0.0465, "turnoverFrictionBps": 3.0 }
+  },
+  "safeHavenTBillRate": 0.0500,
+  "parameters": {
+    "weighting": "EQUAL_WEIGHT",
+    "circuitBreaker": "UNIFIED_BASKET",
+    "emaLookback": 200,
+    "volRatioThreshold": 1.35,
+    "atrPeriod": 14,
+    "atrBaselinePeriod": 50,
+    "dwellHours": 24
+  },
+  "friction": {
+    "turnoverFrictionBpsPerLeg": 3.0
+  },
+  "holdoutPeriod": {
+    "label": "2025-01-01T00:00:00.000Z -> 2026-09-07T23:59:59.999Z (Virgin Temporal Holdout)",
+    "startMs": 1735689600000
+  },
+  "confirmatoryGates": {
+    "gate1_annualizedReturn": {
+      "metric": "annualizedReturnPct",
+      "threshold": ">= 6.00"
+    },
+    "gate2_totalReturn": {
+      "metric": "totalNetReturnPct",
+      "threshold": "> 0.00"
+    },
+    "gate3_sharpeRatio": {
+      "metric": "annualizedSharpe",
+      "threshold": ">= 1.20"
+    },
+    "gate4_maxDrawdown": {
+      "metric": "maxDrawdownPct",
+      "threshold": "<= 4.00"
+    },
+    "gate5_statisticalSignificance": {
+      "metric": "pBlock",
+      "threshold": "< 0.0500",
+      "bootstrapIterations": 10000,
+      "blockDurationDays": 14
+    }
+  }
+}
